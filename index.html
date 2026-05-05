@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UA Moodle UI Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fjalla+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+BR:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/uamerica-moodle.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+  </head>
+  <body>
+    <div class="catalog-app ua-moodle">
+      <aside class="catalog-sidebar">
+        <div class="catalog-logo">
+          <img class="ua-logo ua-logo--sm" src="https://data.yedatech.com.co/api/public/1777858705294-Logo-UA.png" alt="Universidad de America">
+          <strong>UA Moodle UI</strong>
+          <span>Libreria HTML, CSS y JS</span>
+        </div>
+
+        <nav class="catalog-nav" aria-label="Catalogo">
+          <a href="#overview">Resumen</a>
+          <a href="#install">Instalacion</a>
+          <a href="#brand">Marca</a>
+          <a href="#backgrounds">Fondos</a>
+          <a href="#components">Componentes</a>
+          <a href="#editorial">Editorial</a>
+          <a href="#interaction">Interaccion</a>
+          <a href="#media">Media y forms</a>
+          <a href="#tokens">Inventario</a>
+        </nav>
+
+        <div class="catalog-sidebar__foot">
+          Para Moodle se cargan solo <code>uamerica-moodle.css</code>, <code>uamerica-moodle.js</code> y las fuentes. <code>app.css</code> es solo del catalogo.
+        </div>
+      </aside>
+
+      <main class="catalog-main">
+        <header class="catalog-header" id="overview">
+          <div>
+            <p class="catalog-section__eyebrow">Universidad de America</p>
+            <h1>Sistema de componentes para Moodle</h1>
+            <p>Catalogo interno para revisar patrones, estilos y comportamientos antes de pegarlos como HTML en Moodle.</p>
+          </div>
+
+          <div class="catalog-status" aria-label="Resumen de libreria">
+            <div class="catalog-stat"><strong>50+</strong><span>clases base</span></div>
+            <div class="catalog-stat"><strong>22</strong><span>modulos UI</span></div>
+            <div class="catalog-stat"><strong>13</strong><span>colores</span></div>
+            <div class="catalog-stat"><strong>17</strong><span>fuentes</span></div>
+          </div>
+        </header>
+
+        <section class="catalog-section" id="install">
+          <div class="catalog-section__head">
+            <p class="catalog-section__eyebrow">Setup</p>
+            <h2>Instalacion en Moodle</h2>
+            <p>El orden importa: fuentes y CSS en HEAD; JS antes de cerrar BODY. El enlace completo de fuentes esta en <code>examples/moodle-includes.html</code>.</p>
+          </div>
+
+          <div class="catalog-usage">
+            <pre class="catalog-code">&lt;!-- HEAD --&gt;
+&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;!-- pegar aqui el link completo de Google Fonts --&gt;
+&lt;link rel="stylesheet" href="RUTA_PUBLICA/assets/css/uamerica-moodle.css"&gt;
+
+&lt;!-- Fin del BODY --&gt;
+&lt;script src="RUTA_PUBLICA/assets/js/uamerica-moodle.js"&gt;&lt;/script&gt;</pre>
+
+            <div class="catalog-panel">
+              <div class="catalog-panel__title">
+                <h3>Regla de uso</h3>
+                <code>.ua-moodle</code>
+              </div>
+              <p>Todo bloque debe ir dentro de <code>.ua-moodle</code> para aislar tokens, tipografia y componentes del tema de Moodle.</p>
+              <div class="catalog-chip-list">
+                <span class="catalog-chip">HTML copiable</span>
+                <span class="catalog-chip">CSS global</span>
+                <span class="catalog-chip">JS progresivo</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="catalog-section" id="brand">
+          <div class="catalog-section__head">
+            <p class="catalog-section__eyebrow">Brand system</p>
+            <h2>Logos, colores y fuentes</h2>
+            <p>La marca vive como tokens CSS. Los componentes pueden cambiar acento, fuente, tono y usar los logos oficiales.</p>
+          </div>
+
+          <div class="catalog-panel">
+            <div class="catalog-panel__title">
+              <h3>Logos oficiales</h3>
+              <code>.ua-logo</code>
+            </div>
+            <div class="catalog-logo-grid">
+              <div class="catalog-logo-sample">
+                <img class="ua-logo ua-logo--md" src="https://data.yedatech.com.co/api/public/1777858705780-Logo-UA-Negro.png" alt="Universidad de America negro">
+                <code>Logo-UA-Negro.png</code>
+              </div>
+              <div class="catalog-logo-sample catalog-logo-sample--dark">
+                <img class="ua-logo ua-logo--md" src="https://data.yedatech.com.co/api/public/1777858705294-Logo-UA.png" alt="Universidad de America">
+                <code>Logo-UA.png</code>
+              </div>
+              <div class="catalog-logo-sample">
+                <div class="ua-logo-lockup">
+                  <span class="ua-logo-mark ua-logo-mark--black ua-logo--sm" role="img" aria-label="Universidad de America"></span>
+                  <span class="ua-logo-lockup__text">
+                    <strong>Curso virtual</strong>
+                    <span>Componente con lockup</span>
+                  </span>
+                </div>
+                <code>.ua-logo-lockup</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-panel-grid">
+            <div class="catalog-panel">
+              <div class="catalog-panel__title">
+                <h3>Colores oficiales</h3>
+                <code>--ua-*</code>
+              </div>
+              <ul class="catalog-color-list">
+                <li><span style="--dot-color:#1A2403"></span><div><strong>Verde profundo</strong><code>#1A2403</code></div></li>
+                <li><span style="--dot-color:#C8FF01"></span><div><strong>Lima institucional</strong><code>#C8FF01</code></div></li>
+                <li><span style="--dot-color:#FFCE00"></span><div><strong>Amarillo</strong><code>#FFCE00</code></div></li>
+                <li><span style="--dot-color:#FFFFFF"></span><div><strong>Blanco</strong><code>#FFFFFF</code></div></li>
+                <li><span style="--dot-color:#00A4B5"></span><div><strong>Azul turquesa</strong><code>#00A4B5</code></div></li>
+                <li><span style="--dot-color:#FF7900"></span><div><strong>Naranja</strong><code>#FF7900</code></div></li>
+                <li><span style="--dot-color:#7223B7"></span><div><strong>Violeta</strong><code>#7223B7</code></div></li>
+                <li><span style="--dot-color:#BBD55B"></span><div><strong>Verde claro</strong><code>#BBD55B</code></div></li>
+                <li><span style="--dot-color:#63783A"></span><div><strong>Oliva</strong><code>#63783A</code></div></li>
+                <li><span style="--dot-color:#547634"></span><div><strong>Verde medio</strong><code>#547634</code></div></li>
+                <li><span style="--dot-color:#A7A9AA"></span><div><strong>Gris claro</strong><code>#A7A9AA</code></div></li>
+                <li><span style="--dot-color:#606060"></span><div><strong>Gris medio</strong><code>#606060</code></div></li>
+                <li><span style="--dot-color:#3D3D3F"></span><div><strong>Gris oscuro</strong><code>#3D3D3F</code></div></li>
+              </ul>
+            </div>
+
+            <div class="catalog-panel">
+              <div class="catalog-panel__title">
+                <h3>Fuentes disponibles</h3>
+                <code>17 familias</code>
+              </div>
+              <div class="catalog-font-grid">
+                <article class="catalog-font" style="--sample-font:'Bebas Neue',sans-serif"><span>Bebas Neue</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'DM Sans',sans-serif"><span>DM Sans</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Fjalla One',sans-serif"><span>Fjalla One</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Inter',sans-serif"><span>Inter</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'JetBrains Mono',monospace"><span>JetBrains Mono</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Lobster',cursive"><span>Lobster</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Montserrat',sans-serif"><span>Montserrat</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Nunito',sans-serif"><span>Nunito</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Oswald',sans-serif"><span>Oswald</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Pacifico',cursive"><span>Pacifico</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Playfair Display',serif"><span>Playfair Display</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Playwrite BR',cursive"><span>Playwrite BR</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Poppins',sans-serif"><span>Poppins</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Roboto Slab',serif"><span>Roboto Slab</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Roboto',sans-serif"><span>Roboto</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Rubik',sans-serif"><span>Rubik</span><strong>Universidad de America</strong></article>
+                <article class="catalog-font" style="--sample-font:'Space Grotesk',sans-serif"><span>Space Grotesk</span><strong>Universidad de America</strong></article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="catalog-section" id="backgrounds">
+          <div class="catalog-section__head">
+            <p class="catalog-section__eyebrow">Surfaces</p>
+            <h2>Fondos graficos</h2>
+            <p>Fondos discretos para diferenciar semanas, recursos, modulos y estados sin depender de imagenes externas.</p>
+          </div>
+
+          <div class="catalog-bg-grid">
+            <div class="catalog-bg-sample ua-bg-dot-grid"><strong>.ua-bg-dot-grid</strong></div>
+            <div class="catalog-bg-sample ua-bg-lines"><strong>.ua-bg-lines</strong></div>
+            <div class="catalog-bg-sample ua-bg-neural"><strong>.ua-bg-neural</strong></div>
+            <div class="catalog-bg-sample ua-bg-waves"><strong>.ua-bg-waves</strong></div>
+            <div class="catalog-bg-sample ua-bg-mesh"><strong>.ua-bg-mesh</strong></div>
+          </div>
+        </section>
+
+        <section class="catalog-section" id="components">
+          <div class="catalog-section__head">
+            <p class="catalog-section__eyebrow">Component library</p>
+            <h2>Contenedores y patrones academicos</h2>
+            <p>Previews de bloques listos para convertirse en HTML copiable dentro de Moodle.</p>
+          </div>
+
+          <div class="catalog-component-stack">
+            <div class="catalog-preview">
+              <div class="catalog-panel__title">
+                <h3>Banners grandes de inicio</h3>
+                <code>.ua-course-hero</code>
+              </div>
+              <div class="catalog-component-stack">
+                <section class="ua-course-hero ua-course-hero--lime">
+                  <div class="ua-course-hero__content">
+                    <div>
+                      <div class="ua-course-hero__brand">
+                        <img class="ua-logo ua-logo--md" src="https://data.yedatech.com.co/api/public/1777858705780-Logo-UA-Negro.png" alt="Universidad de America">
+                      </div>
+                      <p class="ua-course-hero__eyebrow">Curso virtual</p>
+                      <h3 class="ua-course-hero__title">Pensamiento critico y contexto profesional</h3>
+                      <p class="ua-course-hero__description">Portada de curso con nombre, metodologia, modalidad y acciones principales. El logo es parte obligatoria del componente.</p>
+                      <ul class="ua-course-hero__meta">
+                        <li>Metodologia: aprendizaje basado en retos</li>
+                        <li>Modalidad: virtual</li>
+                        <li>Duracion: 8 semanas</li>
+                      </ul>
+                    </div>
+                    <div class="ua-course-hero__actions">
+                      <a class="ua-button ua-button--lime ua-button--auto" href="#">Iniciar curso</a>
+                      <a class="ua-button ua-button--outline ua-button--auto" href="#">Ver metodologia</a>
+                    </div>
+                  </div>
+                  <div class="ua-course-hero__visual ua-bg-dot-grid">
+                    <div class="ua-course-hero__details">
+                      <div class="ua-course-hero__detail">
+                        <strong>Competencia central</strong>
+                        <span>Analizar informacion, argumentar y tomar postura con evidencia.</span>
+                      </div>
+                      <div class="ua-course-hero__detail">
+                        <strong>Evaluacion</strong>
+                        <span>Foros, actividades aplicadas, quiz y entrega final.</span>
+                      </div>
+                      <div class="ua-course-hero__detail">
+                        <strong>Acompanamiento</strong>
+                        <span>Sesiones sincronicas, recursos y retroalimentacion semanal.</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="ua-course-hero ua-course-hero--dark ua-course-hero--split">
+                  <div class="ua-course-hero__content">
+                    <div>
+                      <div class="ua-course-hero__brand">
+                        <img class="ua-logo ua-logo--md" src="https://data.yedatech.com.co/api/public/1777858705294-Logo-UA.png" alt="Universidad de America">
+                      </div>
+                      <p class="ua-course-hero__eyebrow">Modulo de profundizacion</p>
+                      <h3 class="ua-course-hero__title">Innovacion, datos y decision estrategica</h3>
+                      <p class="ua-course-hero__description">Variante oscura para cursos especiales, diplomados, seminarios o experiencias con mayor jerarquia visual.</p>
+                      <ul class="ua-course-hero__meta">
+                        <li>Metodologia: proyecto aplicado</li>
+                        <li>Modalidad: hibrida</li>
+                        <li>Sesiones: Meet + trabajo autonomo</li>
+                      </ul>
+                    </div>
+                    <div class="ua-course-hero__actions">
+                      <a class="ua-button ua-button--lime ua-button--auto" href="#">Entrar al modulo</a>
+                      <a class="ua-button ua-button--outline ua-button--auto" href="#">Cronograma</a>
+                    </div>
+                  </div>
+                  <div class="ua-course-hero__visual ua-bg-neural">
+                    <div class="ua-course-hero__details">
+                      <div class="ua-course-hero__detail">
+                        <strong>Producto final</strong>
+                        <span>Prototipo, presentacion ejecutiva y bitacora de aprendizaje.</span>
+                      </div>
+                      <div class="ua-course-hero__detail">
+                        <strong>Recursos</strong>
+                        <span>Videos, podcasts, guias, datasets y encuentros sincronicos.</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <div class="catalog-preview">
+              <section class="ua-hero catalog-mini-hero ua-bg-waves">
+                <div class="ua-hero__content">
+                  <p class="ua-kicker">Unidad 01</p>
+                  <h2 class="ua-title ua-title--display">Pensamiento critico</h2>
+                  <p class="ua-lead">Cabecera inmersiva para abrir modulos o rutas de aprendizaje.</p>
+                  <div class="ua-button-row">
+                    <a class="ua-button ua-button--accent ua-button--shine" href="#">Abrir actividad</a>
+                    <a class="ua-button ua-button--outline" href="#">Ver recursos</a>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <div class="catalog-panel-grid">
+              <div class="catalog-preview">
+                <article class="ua-card ua-card--accent ua-hover-lift" data-ua-reveal>
+                  <p class="ua-card__meta">Recurso</p>
+                  <h3 class="ua-card__title">Lectura guiada</h3>
+                  <p class="ua-card__text">Card base con acento, sombra y hover.</p>
+                </article>
+              </div>
+
+              <div class="catalog-preview">
+                <article class="ua-card ua-resource-card ua-hover-border" data-ua-reveal>
+                  <span class="ua-resource-card__icon">PDF</span>
+                  <div>
+                    <p class="ua-card__meta">Material</p>
+                    <h3 class="ua-card__title">Documento descargable</h3>
+                    <p class="ua-card__text">Estructura compacta para recursos.</p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="catalog-preview">
+                <article class="ua-metric ua-bg-dot-grid" data-ua-reveal>
+                  <span class="ua-metric__value" data-ua-counter="92" data-ua-counter-suffix="%">0%</span>
+                  <p class="ua-metric__label">Avance esperado</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="catalog-panel-grid">
+              <aside class="ua-callout" data-tone="success">
+                <h3 class="ua-callout__title">Retroalimentacion disponible</h3>
+                <p class="ua-callout__body">El docente publico comentarios sobre la actividad.</p>
+              </aside>
+              <aside class="ua-callout" data-tone="warning">
+                <h3 class="ua-callout__title">Fecha limite</h3>
+                <p class="ua-callout__body">La entrega cierra el viernes a las 11:59 p. m.</p>
+              </aside>
+              <aside class="ua-callout" data-tone="special">
+                <h3 class="ua-callout__title">Recurso destacado</h3>
+                <p class="ua-callout__body">Contenido recomendado para profundizar.</p>
+              </aside>
+            </div>
+
+            <div class="catalog-preview">
+              <div class="catalog-panel__title">
+                <h3>Variaciones de banners</h3>
+                <code>.ua-banner--*</code>
+              </div>
+              <div class="catalog-banner-grid">
+                <section class="ua-banner ua-banner--lime">
+                  <div class="ua-banner__main">
+                    <span class="ua-banner__icon">01</span>
+                    <div>
+                      <h3 class="ua-banner__title">Inicio de unidad</h3>
+                      <p class="ua-banner__body">Ruta de lectura, actividades y evidencia final.</p>
+                    </div>
+                  </div>
+                  <div class="ua-banner__actions">
+                    <a class="ua-button ua-button--accent ua-button--auto" href="#">Comenzar</a>
+                  </div>
+                </section>
+
+                <section class="ua-banner ua-banner--gold">
+                  <div class="ua-banner__main">
+                    <span class="ua-banner__icon">!</span>
+                    <div>
+                      <h3 class="ua-banner__title">Entrega proxima</h3>
+                      <p class="ua-banner__body">Recuerda revisar la rubrica antes de enviar.</p>
+                    </div>
+                  </div>
+                  <div class="ua-banner__actions">
+                    <a class="ua-button ua-button--outline ua-button--auto" href="#">Ver rubrica</a>
+                  </div>
+                </section>
+
+                <section class="ua-banner ua-banner--info">
+                  <div class="ua-banner__main">
+                    <span class="ua-banner__icon">i</span>
+                    <div>
+                      <h3 class="ua-banner__title">Sesion sincronica</h3>
+                      <p class="ua-banner__body">Encuentro virtual con grabacion disponible despues.</p>
+                    </div>
+                  </div>
+                  <div class="ua-banner__actions">
+                    <a class="ua-button ua-button--cyan ua-button--auto" href="#">Entrar</a>
+                  </div>
+                </section>
+
+                <section class="ua-banner ua-banner--dark ua-bg-neural">
+                  <div class="ua-banner__main">
+                    <span class="ua-banner__icon">UA</span>
+                    <div>
+                      <h3 class="ua-banner__title">Modulo destacado</h3>
+                      <p class="ua-banner__body">Banner oscuro con acento institucional y fondo neural.</p>
+                    </div>
+                  </div>
+                  <div class="ua-banner__actions">
+                    <a class="ua-button ua-button--accent ua-button--auto" href="#">Explorar</a>
+                  </div>
+                </section>
+
+                <section class="ua-banner ua-banner--minimal ua-banner--compact">
+                  <div class="ua-banner__main">
+                    <span class="ua-banner__icon">R</span>
+                    <div>
+                      <h3 class="ua-banner__title">Recordatorio rapido</h3>
+                      <p class="ua-banner__body">Formato compacto para mensajes dentro de una actividad.</p>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="ua-banner ua-banner--ribbon ua-banner--special" data-ribbon="Nuevo">
+                  <div class="ua-banner__main">
+                    <span class="ua-banner__icon">+</span>
+                    <div>
+                      <h3 class="ua-banner__title">Contenido complementario</h3>
+                      <p class="ua-banner__body">Banner con cinta para destacar material agregado o actualizado.</p>
+                    </div>
+                  </div>
+                  <div class="ua-banner__actions">
+                    <a class="ua-button ua-button--outline ua-button--auto" href="#">Revisar</a>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <div class="catalog-preview">
+              <div class="catalog-panel__title">
+                <h3>Contenido tematico</h3>
+                <code>.ua-content-block</code>
+              </div>
+              <div class="catalog-component-stack">
+                <section class="ua-content-block ua-content-block--theory">
+                  <div class="ua-content-block__content">
+                    <span class="ua-content-block__label">Teoria</span>
+                    <h3 class="ua-content-block__title">Concepto central de la semana</h3>
+                    <p class="ua-content-block__text">Bloque para explicar teoria, definiciones, autores o marcos conceptuales con soporte visual.</p>
+                    <div class="ua-topic-grid">
+                      <article class="ua-topic-card">
+                        <span class="ua-topic-card__number">1</span>
+                        <h4 class="ua-topic-card__title">Idea clave</h4>
+                        <p class="ua-topic-card__text">Resumen breve del concepto.</p>
+                      </article>
+                      <article class="ua-topic-card">
+                        <span class="ua-topic-card__number">2</span>
+                        <h4 class="ua-topic-card__title">Aplicacion</h4>
+                        <p class="ua-topic-card__text">Como se usa en contexto.</p>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="ua-content-block__media ua-bg-dot-grid"></div>
+                </section>
+
+                <section class="ua-content-block ua-content-block--case">
+                  <div class="ua-content-block__content">
+                    <span class="ua-content-block__label">Caso</span>
+                    <h3 class="ua-content-block__title">Analisis de situacion</h3>
+                    <p class="ua-content-block__text">Contenedor para presentar contexto, preguntas orientadoras y recursos asociados.</p>
+                    <aside class="ua-content-block__aside">Pregunta guia: que evidencia permite sustentar la decision?</aside>
+                  </div>
+                  <div class="ua-content-block__media ua-bg-neural"></div>
+                </section>
+
+                <section class="ua-content-block ua-content-block--lab">
+                  <div class="ua-content-block__content">
+                    <span class="ua-content-block__label">Laboratorio</span>
+                    <h3 class="ua-content-block__title">Practica paso a paso</h3>
+                    <p class="ua-content-block__text">Bloque para actividades aplicadas, procedimientos, simulaciones o retos de clase.</p>
+                    <a class="ua-button ua-button--accent ua-button--auto" href="#">Abrir guia</a>
+                  </div>
+                  <div class="ua-content-block__media ua-bg-mesh"></div>
+                </section>
+
+                <section class="ua-content-block ua-content-block--reflection ua-content-block--reverse">
+                  <div class="ua-content-block__content">
+                    <span class="ua-content-block__label">Reflexion</span>
+                    <h3 class="ua-content-block__title">Cierre conceptual</h3>
+                    <p class="ua-content-block__text">Variante invertida para alternar ritmo visual y evitar que todos los bloques se vean iguales.</p>
+                    <a class="ua-button ua-button--outline ua-button--auto" href="#">Responder</a>
+                  </div>
+                  <div class="ua-content-block__media ua-bg-waves"></div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="catalog-section" id="editorial">
+          <div class="catalog-section__head">
+            <p class="catalog-section__eyebrow">Course editorial</p>
+            <h2>Componentes premium para cursos</h2>
+            <p>Bloques de alto impacto para bienvenida, metodologia, perfiles, modulos y episodios de audio. Todos mantienen logo, contraste y tokens institucionales.</p>
+          </div>
+
+          <div class="catalog-component-stack">
+            <div class="catalog-preview">
+              <div class="catalog-panel__title">
+                <h3>Portada editorial oscura</h3>
+                <code>.ua-editorial-hero</code>
+              </div>
+              <section class="ua-editorial-hero ua-hover-outline-pulse" data-ua-reveal>
+                <div class="ua-editorial-hero__brand">
+                  <div class="ua-editorial-hero__logo-card">
+                    <img class="ua-logo ua-logo--md" src="https://data.yedatech.com.co/api/public/1777858705294-Logo-UA.png" alt="Universidad de America">
+                  </div>
+                </div>
+                <div class="ua-editorial-hero__content">
+                  <span class="ua-editorial-pill">Formacion docente - Innovacion educativa - 2026</span>
+                  <h3 class="ua-editorial-hero__title">
+                    Moodle con HTML,
+                    <span><span class="ua-accent-lime">LaTeX</span> e <span class="ua-accent-cyan">Inteligencia</span></span>
+                    <span class="ua-accent-gold">Artificial</span>
+                  </h3>
+                  <p class="ua-editorial-hero__lead">De la etiqueta HTML al podcast generado con IA. Una portada de apertura para experiencias formativas con identidad visual fuerte y lectura inmediata.</p>
+                </div>
+                <div class="ua-editorial-hero__aside">
+                  <div class="ua-editorial-hero__metric">
+                    <strong>04</strong>
+                    <span>saberes aplicados</span>
+                  </div>
+                  <div class="ua-editorial-hero__metric">
+                    <strong>100%</strong>
+                    <span>practico</span>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <div class="catalog-preview">
+              <div class="catalog-panel__title">
+                <h3>Bienvenida con beneficios</h3>
+                <code>.ua-welcome-section</code>
+              </div>
+              <section class="ua-welcome-section" data-ua-reveal>
+                <div class="ua-welcome-section__intro">
+                  <span class="ua-editorial-icon">UA</span>
+                  <span class="ua-editorial-pill ua-editorial-pill--cyan">Bienvenido - Welcome - Bienvenue</span>
+                  <h3 class="ua-welcome-section__title">Bienvenido a un curso que cambia <span class="ua-accent-cyan">la forma en que ensenas en linea</span></h3>
+                  <p class="ua-welcome-section__lead">Este bloque abre una experiencia con contexto claro, tono academico y promesa concreta antes de mostrar actividades o recursos.</p>
+                </div>
+
+                <div class="ua-welcome-section__features">
+                  <article class="ua-feature-card">
+                    <span class="ua-editorial-icon ua-feature-card__icon">100</span>
+                    <h4 class="ua-feature-card__title">Practico</h4>
+                    <p class="ua-feature-card__text">Cada concepto se acompana con ejemplo real, practica guiada y resultado visible.</p>
+                  </article>
+                  <article class="ua-feature-card ua-feature-card--cyan">
+                    <span class="ua-editorial-icon ua-feature-card__icon">IA</span>
+                    <h4 class="ua-feature-card__title">Asistido por IA</h4>
+                    <p class="ua-feature-card__text">Ideal para contenidos con ChatGPT, Gemini, Claude u otras herramientas de apoyo.</p>
+                  </article>
+                  <article class="ua-feature-card ua-feature-card--gold">
+                    <span class="ua-editorial-icon ua-feature-card__icon">OK</span>
+                    <h4 class="ua-feature-card__title">Sin barreras tecnicas</h4>
+                    <p class="ua-feature-card__text">Mensajes claros, estructura visual y acciones pensadas para docentes y estudiantes.</p>
+                  </article>
+                </div>
+
+                <blockquote class="ua-quote-band">
+                  <span class="ua-editorial-icon ua-editorial-icon--dark ua-quote-band__icon">"</span>
+                  <div>
+                    <p>No se trata de aprender a programar. Se trata de comunicar mejor, evaluar con mas inteligencia y ahorrar horas de trabajo manual.</p>
+                    <cite>Gestion de aprendizajes y virtualidad - Universidad de America</cite>
+                  </div>
+                </blockquote>
+              </section>
+            </div>
+
+            <div class="catalog-preview">
+              <div class="catalog-panel__title">
+                <h3>Perfiles de audiencia</h3>
+                <code>.ua-audience-section</code>
+              </div>
+              <section class="ua-audience-section" data-ua-reveal>
+                <div class="ua-audience-section__head">
+                  <span class="ua-editorial-icon">PER</span>
+                  <div>
+                    <h3 class="ua-audience-section__title">Este curso es para ti?</h3>
+                    <p class="ua-audience-section__subtitle">Reconoce el punto de partida del estudiante o docente.</p>
+                  </div>
+                </div>
+                <div class="ua-audience-grid">
+                  <article class="ua-profile-card">
+                    <div class="ua-profile-card__head">
+                      <span class="ua-profile-card__icon">01</span>
+                      <h4 class="ua-profile-card__title">Docente que empieza</h4>
+                    </div>
+                    <div class="ua-profile-card__body">
+                      <p class="ua-profile-card__quote">"Uso Moodle solo para subir archivos y quiero mejorar sin perderme en lo tecnico."</p>
+                      <span class="ua-profile-card__badge">Perfecto para iniciar</span>
+                    </div>
+                  </article>
+                  <article class="ua-profile-card ua-profile-card--intermediate">
+                    <div class="ua-profile-card__head">
+                      <span class="ua-profile-card__icon">02</span>
+                      <h4 class="ua-profile-card__title">Docente intermedio</h4>
+                    </div>
+                    <div class="ua-profile-card__body">
+                      <p class="ua-profile-card__quote">"Ya uso etiquetas y paginas, pero quiero dar el salto a recursos mas interactivos."</p>
+                      <span class="ua-profile-card__badge">Saberes 2-5</span>
+                    </div>
+                  </article>
+                  <article class="ua-profile-card ua-profile-card--advanced">
+                    <div class="ua-profile-card__head">
+                      <span class="ua-profile-card__icon">03</span>
+                      <h4 class="ua-profile-card__title">Docente avanzado</h4>
+                    </div>
+                    <div class="ua-profile-card__body">
+                      <p class="ua-profile-card__quote">"Domino Moodle, pero quiero incorporar contenidos web, audio y bancos de preguntas."</p>
+                      <span class="ua-profile-card__badge">Reto avanzado</span>
+                    </div>
+                  </article>
+                </div>
+              </section>
+            </div>
+
+            <div class="catalog-preview">
+              <div class="catalog-panel__title">
+                <h3>Metodologia visual</h3>
+                <code>.ua-method-section</code>
+              </div>
+              <section class="ua-method-section ua-bg-neural" data-ua-reveal>
+                <div class="ua-method-section__head">
+                  <span class="ua-editorial-pill">Metodologia del curso</span>
+                  <h3 class="ua-method-section__title">Cada saber sigue la misma logica</h3>
+                </div>
+                <div class="ua-method-steps">
+                  <article class="ua-method-card">
+                    <span class="ua-editorial-icon ua-method-card__icon">VER</span>
+                    <h4 class="ua-method-card__title ua-accent-lime">Ver</h4>
+                    <p class="ua-method-card__text">Demo en video o screencast del resultado final antes de empezar.</p>
+                  </article>
+                  <span class="ua-method-connector">-&gt;</span>
+                  <article class="ua-method-card ua-method-card--cyan">
+                    <span class="ua-editorial-icon ua-method-card__icon">ENT</span>
+                    <h4 class="ua-method-card__title ua-accent-cyan">Entender</h4>
+                    <p class="ua-method-card__text">Explicacion con analogias cotidianas y criterios de decision.</p>
+                  </article>
+                  <span class="ua-method-connector">-&gt;</span>
+                  <article class="ua-method-card ua-method-card--gold">
+                    <span class="ua-editorial-icon ua-method-card__icon">HAC</span>
+                    <h4 class="ua-method-card__title ua-accent-gold">Hacer</h4>
+                    <p class="ua-method-card__text">Practica guiada paso a paso con resultado aplicable en el aula real.</p>
+                  </article>
+                </div>
+              </section>
+            </div>
+
+            <div class="catalog-preview">
+              <div class="catalog-panel__title">
+                <h3>Introduccion a modulo</h3>
+                <code>.ua-module-intro</code>
+              </div>
+              <section class="ua-module-intro" data-ua-reveal>
+                <header class="ua-module-intro__header">
+                  <span class="ua-editorial-icon ua-module-intro__icon">01</span>
+                  <div>
+                    <p class="ua-module-intro__kicker">Introduccion al modulo</p>
+                    <h3 class="ua-module-intro__title">Bienvenidos al Saber 1</h3>
+                  </div>
+                  <span class="ua-module-intro__logo">
+                    <img class="ua-logo" src="https://data.yedatech.com.co/api/public/1777858705780-Logo-UA-Negro.png" alt="Universidad de America">
+                  </span>
+                </header>
+                <div class="ua-module-intro__body">
+                  <p>El diseno de un entorno digital no es solo estetica: es una herramienta pedagogica para reducir la carga cognitiva y guiar la atencion hacia lo importante.</p>
+                  <p>En este primer paso de la ruta aprenderemos a tomar control del espacio educativo usando HTML, CSS y componentes visuales reutilizables.</p>
+                  <div class="ua-module-intro__purpose">Proposito del saber: disenar contenidos digitales mas claros, accesibles y pertinentes para el aprendizaje.</div>
+                </div>
+              </section>
+            </div>
+
+            <div class="catalog-preview">
+              <div class="catalog-panel__title">
+                <h3>Leccion de audio / podcast</h3>
+                <code>.ua-audio-lesson</code>
+              </div>
+              <section class="ua-audio-lesson" data-ua-reveal>
+                <div class="ua-audio-lesson__hero">
+                  <div class="ua-audio-lesson__top">
+                    <span class="ua-editorial-icon ua-editorial-icon--dark">AUD</span>
+                    <div>
+                      <span class="ua-editorial-pill ua-editorial-pill--cyan">Preparacion auditiva</span>
+                      <h3 class="ua-audio-lesson__title">El poder del <span class="ua-accent-lime">HTML</span> en el aula</h3>
+                    </div>
+                  </div>
+                  <p class="ua-audio-lesson__copy">Descubre como el uso basico de HTML ayuda a estructurar, resaltar y transformar textos planos en experiencias visualmente organizadas.</p>
+                  <div class="ua-audio-lesson__player">
+                    <div class="ua-audio-lesson__player-title">
+                      <span class="ua-editorial-icon ua-editorial-icon--dark">MP3</span>
+                      <h4>HTML Basico: dale vida a tu aula virtual</h4>
+                    </div>
+                    <article class="ua-podcast-player ua-podcast-player--full" data-ua-podcast data-ua-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">
+                      <div class="ua-podcast-player__body">
+                        <p class="ua-podcast-player__meta">Podcast interactivo / URL de audio</p>
+                        <h3 class="ua-podcast-player__title">Episodio de apertura</h3>
+                        <div class="ua-podcast-player__controls">
+                          <button class="ua-podcast-player__play" type="button">Play</button>
+                          <input class="ua-podcast-player__range" type="range" value="0" aria-label="Progreso del audio">
+                          <span class="ua-podcast-player__time">
+                            <span class="ua-podcast-player__current">0:00</span>
+                            <span>/</span>
+                            <span class="ua-podcast-player__duration">0:00</span>
+                          </span>
+                        </div>
+                        <audio class="ua-podcast-player__audio" preload="metadata"></audio>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="ua-audio-lesson__body">
+                  <div class="ua-audio-lesson__context">
+                    <p class="ua-audio-lesson__label">Contexto del episodio</p>
+                    <p class="ua-audio-lesson__text">En este episodio desmitificamos el uso del HTML en Moodle y mostramos como un lenguaje sencillo puede mejorar estructura, jerarquia y lectura.</p>
+                  </div>
+                  <aside class="ua-audio-lesson__meta">
+                    <div class="ua-audio-lesson__meta-card">
+                      <span class="ua-editorial-icon">DUR</span>
+                      <div><span>Duracion</span><strong>02 min 15 seg</strong></div>
+                    </div>
+                    <div class="ua-audio-lesson__meta-card">
+                      <span class="ua-editorial-icon">EP</span>
+                      <div><span>Episodio</span><strong>T1 - Ep. 1</strong></div>
+                    </div>
+                  </aside>
+                </div>
+                <div class="ua-audio-lesson__listen">
+                  <p class="ua-audio-lesson__label">Mientras escuchas, presta atencion a:</p>
+                  <div class="ua-audio-lesson__chips">
+                    <span class="ua-audio-lesson__chip">Que es realmente HTML</span>
+                    <span class="ua-audio-lesson__chip">Lenguaje de marcado</span>
+                    <span class="ua-audio-lesson__chip">Estructura visual</span>
+                    <span class="ua-audio-lesson__chip">Buenas practicas Moodle</span>
+                  </div>
+                </div>
+                <footer class="ua-audio-lesson__footer">
+                  <p><strong>Obligatorio</strong> - Si tienes problemas de red, escucha el archivo offline.</p>
+                  <a class="ua-button ua-button--accent ua-button--auto" href="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">Descargar audio MP3</a>
+                </footer>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section class="catalog-section" id="interaction">
+          <div class="catalog-section__head">
+            <p class="catalog-section__eyebrow">Behavior</p>
+            <h2>Interaccion y movimiento</h2>
+            <p>El JS inicializa automaticamente componentes por atributos <code>data-ua-*</code>.</p>
+          </div>
+
+          <div class="catalog-panel-grid">
+            <div class="catalog-preview">
+              <article class="ua-card ua-card--accent ua-hover-shake ua-hover-outline">
+                <p class="ua-card__meta">Hover</p>
+                <h3 class="ua-card__title">Shake leve + contorno</h3>
+                <p class="ua-card__text">Util para llamados muy puntuales, sin abusar del movimiento.</p>
+              </article>
+            </div>
+
+            <div class="catalog-preview">
+              <article class="ua-card ua-hover-glow ua-pop-in">
+                <p class="ua-card__meta">Glow</p>
+                <h3 class="ua-card__title">Resplandor institucional</h3>
+                <p class="ua-card__text">Acento lima alrededor del componente en hover.</p>
+              </article>
+            </div>
+
+            <div class="catalog-preview">
+              <article class="ua-card ua-hover-outline-pulse ua-hover-glow-cyan">
+                <p class="ua-card__meta">Outline</p>
+                <h3 class="ua-card__title">Contorno pulsante</h3>
+                <p class="ua-card__text">Para recursos destacados o botones de avance.</p>
+              </article>
+            </div>
+
+            <div class="catalog-preview">
+              <article class="ua-card ua-reveal ua-reveal-blur" data-ua-reveal>
+                <p class="ua-card__meta">Reveal</p>
+                <h3 class="ua-card__title">Aparicion con blur</h3>
+                <p class="ua-card__text">Se activa cuando el bloque entra al viewport.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="catalog-panel-grid">
+            <div class="catalog-preview">
+              <div class="ua-accordion" data-ua-accordion>
+                <div class="ua-accordion__item">
+                  <button class="ua-accordion__trigger">Objetivo</button>
+                  <div class="ua-accordion__panel">
+                    <p>Identificar conceptos clave y aplicarlos en un caso de estudio.</p>
+                  </div>
+                </div>
+                <div class="ua-accordion__item">
+                  <button class="ua-accordion__trigger">Entregable</button>
+                  <div class="ua-accordion__panel">
+                    <p>Documento breve con analisis, evidencia y reflexion final.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog-preview">
+              <div class="ua-tabs" data-ua-tabs>
+                <div class="ua-tabs__list">
+                  <button class="ua-tabs__tab">Antes</button>
+                  <button class="ua-tabs__tab">Durante</button>
+                  <button class="ua-tabs__tab">Despues</button>
+                </div>
+                <div class="ua-tabs__panel"><p>Lee la guia y marca dudas iniciales.</p></div>
+                <div class="ua-tabs__panel"><p>Participa en el foro y contrasta ideas.</p></div>
+                <div class="ua-tabs__panel"><p>Entrega una conclusion con evidencias.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog-panel-grid">
+            <div class="catalog-preview">
+              <div class="ua-carousel" data-ua-carousel data-ua-autoplay="4200">
+                <div class="ua-carousel__viewport">
+                  <div class="ua-carousel__track">
+                    <article class="ua-carousel__slide ua-section ua-section--compact ua-bg-dot-grid">
+                      <h3 class="ua-card__title">Slide uno</h3>
+                      <p>Recursos introductorios.</p>
+                    </article>
+                    <article class="ua-carousel__slide ua-section ua-section--compact ua-bg-waves">
+                      <h3 class="ua-card__title">Slide dos</h3>
+                      <p>Actividad colaborativa.</p>
+                    </article>
+                    <article class="ua-carousel__slide ua-section ua-section--compact ua-bg-mesh">
+                      <h3 class="ua-card__title">Slide tres</h3>
+                      <p>Cierre y retroalimentacion.</p>
+                    </article>
+                  </div>
+                </div>
+                <div class="ua-carousel__controls">
+                  <button class="ua-icon-button ua-carousel__prev" aria-label="Anterior">&lt;</button>
+                  <div class="ua-carousel__dots"></div>
+                  <button class="ua-icon-button ua-carousel__next" aria-label="Siguiente">&gt;</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog-preview catalog-floating-preview">
+              <div class="ua-toast" data-ua-dismissible>
+                <div class="ua-cluster" style="justify-content:space-between">
+                  <strong>Notificacion</strong>
+                  <button class="ua-icon-button" data-ua-dismiss aria-label="Cerrar">x</button>
+                </div>
+                <p>Elemento dismissible para avisos temporales.</p>
+              </div>
+              <button class="ua-button ua-button--accent catalog-modal" data-ua-modal-target="#demo-modal">Abrir modal</button>
+              <a class="ua-floating-action" href="#">Accion flotante</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="catalog-section" id="media">
+          <div class="catalog-section__head">
+            <p class="catalog-section__eyebrow">Content</p>
+            <h2>Media y formularios</h2>
+            <p>Frames, video, objetos multimedia, campos y controles para actividades.</p>
+          </div>
+
+          <div class="catalog-panel-grid">
+            <div class="catalog-preview">
+              <figure class="ua-image-frame ua-bg-mesh">
+                <figcaption class="ua-image-frame__caption">Imagen 16:9 con caption</figcaption>
+              </figure>
+            </div>
+
+            <div class="catalog-preview">
+              <article class="ua-media-object">
+                <div class="ua-media-object__media ua-bg-dot-grid"></div>
+                <div>
+                  <h3 class="ua-card__title">Objeto multimedia</h3>
+                  <p>Imagen o recurso lateral con texto y accion.</p>
+                  <a class="ua-button ua-button--outline ua-button--auto" href="#">Abrir</a>
+                </div>
+              </article>
+            </div>
+
+            <form class="ua-form catalog-preview">
+              <div class="ua-field">
+                <label class="ua-label" for="demo-name">Nombre</label>
+                <input class="ua-input" id="demo-name" type="text" value="Estudiante">
+              </div>
+              <div class="ua-field">
+                <label class="ua-label" for="demo-program">Programa</label>
+                <select class="ua-select" id="demo-program">
+                  <option>Ingenieria</option>
+                  <option>Arquitectura</option>
+                  <option>Economia</option>
+                </select>
+              </div>
+              <label class="ua-check"><input type="checkbox" checked> Acepto condiciones</label>
+              <label class="ua-switch"><input type="checkbox" checked><span class="ua-switch__track"></span> Notificaciones</label>
+            </form>
+          </div>
+
+          <div class="catalog-panel-grid">
+            <div class="catalog-preview">
+              <article class="ua-embed-card ua-embed-card--video">
+                <div class="ua-embed-card__frame">
+                  <div class="ua-embed-card__placeholder">
+                    <span class="ua-embed-card__icon">VID</span>
+                    <strong>Video embebido</strong>
+                  </div>
+                </div>
+                <div class="ua-embed-card__body">
+                  <p class="ua-embed-card__meta">Clase grabada / 18 min</p>
+                  <h3 class="ua-embed-card__title">Introduccion al modulo</h3>
+                  <p class="ua-embed-card__text">Card para YouTube, Vimeo, archivo MP4 o iframe institucional.</p>
+                  <div class="ua-embed-card__actions">
+                    <a class="ua-button ua-button--lime ua-button--auto" href="#">Ver video</a>
+                    <a class="ua-button ua-button--ghost ua-button--auto" href="#">Transcripcion</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="catalog-preview">
+              <article class="ua-embed-card ua-embed-card--video ua-embed-card--compact">
+                <div class="ua-embed-card__frame">
+                  <div class="ua-embed-card__placeholder">
+                    <span class="ua-embed-card__icon">MP4</span>
+                  </div>
+                </div>
+                <div class="ua-embed-card__body">
+                  <p class="ua-embed-card__meta">Video corto / 04 min</p>
+                  <h3 class="ua-embed-card__title">Capsula de repaso</h3>
+                  <p class="ua-embed-card__text">Version compacta para insertar entre secciones.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="catalog-preview">
+              <article class="ua-podcast-player" data-ua-podcast data-ua-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+                <div class="ua-podcast-player__art">P</div>
+                <div class="ua-podcast-player__body">
+                  <p class="ua-podcast-player__meta">Podcast / MP3, WAV, OGG</p>
+                  <h3 class="ua-podcast-player__title">Conversacion con experto</h3>
+                  <div class="ua-podcast-player__controls">
+                    <button class="ua-podcast-player__play" type="button">Play</button>
+                    <input class="ua-podcast-player__range" type="range" value="0" aria-label="Progreso del audio">
+                    <span class="ua-podcast-player__time">
+                      <span class="ua-podcast-player__current">0:00</span>
+                      <span>/</span>
+                      <span class="ua-podcast-player__duration">0:00</span>
+                    </span>
+                  </div>
+                  <audio class="ua-podcast-player__audio" preload="metadata"></audio>
+                </div>
+              </article>
+            </div>
+
+            <div class="catalog-preview">
+              <article class="ua-podcast-player ua-podcast-player--native" data-ua-podcast data-ua-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">
+                <div class="ua-podcast-player__body">
+                  <p class="ua-podcast-player__meta">Fallback nativo</p>
+                  <h3 class="ua-podcast-player__title">Audio de apoyo</h3>
+                  <p>Si no se agregan controles custom, la libreria activa el reproductor nativo del navegador.</p>
+                  <audio class="ua-podcast-player__audio" preload="metadata"></audio>
+                </div>
+              </article>
+            </div>
+
+            <div class="catalog-preview">
+              <article class="ua-meet-card">
+                <div class="ua-meet-card__top">
+                  <div>
+                    <p class="ua-card__meta">Meet embebido</p>
+                    <h3 class="ua-card__title">Tutoria sincronica</h3>
+                  </div>
+                  <span class="ua-meet-card__status">En vivo</span>
+                </div>
+                <div class="ua-meet-card__frame">
+                  <span class="ua-embed-card__icon">MEET</span>
+                </div>
+                <div class="ua-button-row">
+                  <a class="ua-button ua-button--cyan ua-button--auto" href="#">Unirme</a>
+                  <a class="ua-button ua-button--outline ua-button--auto" href="#">Agregar calendario</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="catalog-preview">
+              <article class="ua-embed-card ua-embed-card--meet ua-embed-card--compact">
+                <div class="ua-embed-card__frame">
+                  <div class="ua-embed-card__placeholder">
+                    <span class="ua-embed-card__icon">LIVE</span>
+                  </div>
+                </div>
+                <div class="ua-embed-card__body">
+                  <p class="ua-embed-card__meta">Sesion en vivo</p>
+                  <h3 class="ua-embed-card__title">Clase con enlace Meet</h3>
+                  <p class="ua-embed-card__text">Alternativa compacta para mostrar enlace, hora y accion.</p>
+                  <div class="ua-embed-card__actions">
+                    <a class="ua-button ua-button--cyan ua-button--auto" href="#">Unirme</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="catalog-section" id="tokens">
+          <div class="catalog-section__head">
+            <p class="catalog-section__eyebrow">Inventory</p>
+            <h2>Clases disponibles</h2>
+            <p>Mapa rapido de componentes y utilidades para construir HTML en Moodle.</p>
+          </div>
+
+          <div class="catalog-token-list">
+            <span class="catalog-token">.ua-section</span>
+            <span class="catalog-token">.ua-container</span>
+            <span class="catalog-token">.ua-grid</span>
+            <span class="catalog-token">.ua-split</span>
+            <span class="catalog-token">.ua-card</span>
+            <span class="catalog-token">.ua-resource-card</span>
+            <span class="catalog-token">.ua-editorial-hero</span>
+            <span class="catalog-token">.ua-welcome-section</span>
+            <span class="catalog-token">.ua-audience-section</span>
+            <span class="catalog-token">.ua-method-section</span>
+            <span class="catalog-token">.ua-module-intro</span>
+            <span class="catalog-token">.ua-audio-lesson</span>
+            <span class="catalog-token">.ua-content-block</span>
+            <span class="catalog-token">.ua-topic-card</span>
+            <span class="catalog-token">.ua-button</span>
+            <span class="catalog-token">.ua-callout</span>
+            <span class="catalog-token">.ua-banner</span>
+            <span class="catalog-token">.ua-hero</span>
+            <span class="catalog-token">.ua-accordion</span>
+            <span class="catalog-token">.ua-tabs</span>
+            <span class="catalog-token">.ua-carousel</span>
+            <span class="catalog-token">.ua-modal</span>
+            <span class="catalog-token">.ua-image-frame</span>
+            <span class="catalog-token">.ua-video</span>
+            <span class="catalog-token">.ua-embed-card</span>
+            <span class="catalog-token">.ua-podcast-player</span>
+            <span class="catalog-token">.ua-meet-card</span>
+            <span class="catalog-token">.ua-form</span>
+            <span class="catalog-token">.ua-floating-panel</span>
+            <span class="catalog-token">.ua-bg-dot-grid</span>
+            <span class="catalog-token">.ua-bg-neural</span>
+            <span class="catalog-token">.ua-bg-waves</span>
+            <span class="catalog-token">.ua-bg-mesh</span>
+            <span class="catalog-token">.ua-hover-lift</span>
+            <span class="catalog-token">.ua-reveal</span>
+          </div>
+        </section>
+
+        <p class="catalog-footer">Catalogo local. En Moodle se cargan las fuentes, <code>uamerica-moodle.css</code> y <code>uamerica-moodle.js</code>.</p>
+      </main>
+
+      <div class="ua-modal" id="demo-modal" aria-hidden="true" hidden>
+        <div class="ua-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title">
+          <div class="ua-modal__head">
+            <h2 id="demo-modal-title" class="ua-card__title">Modal de ejemplo</h2>
+            <button class="ua-icon-button" data-ua-modal-close aria-label="Cerrar">x</button>
+          </div>
+          <p>Ventana modal para instrucciones, confirmaciones o recursos destacados dentro de Moodle.</p>
+          <div class="ua-button-row">
+            <button class="ua-button ua-button--accent" data-ua-modal-close>Entendido</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/uamerica-moodle.js"></script>
+  </body>
+</html>
