@@ -1811,6 +1811,11 @@
   padding: var(--ua-space-4);
 }
 
+.ua-content-block__aside + .ua-button-row,
+.ua-content-block__content > .ua-button-row {
+  margin-block-start: var(--ua-space-5);
+}
+
 .ua-topic-grid {
   display: grid;
   gap: var(--ua-space-4);
@@ -2080,6 +2085,141 @@
 
 .ua-moodle :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) .ua-button--outline:hover {
   border-color: var(--ua-primary-lime);
+}
+
+a.ua-button,
+a.ua-button:link,
+a.ua-button:visited,
+a.ua-button:hover,
+a.ua-button:focus,
+a.ua-button:active,
+#page a.ua-button,
+#page a.ua-button:link,
+#page a.ua-button:visited,
+#page a.ua-button:hover,
+#page a.ua-button:focus,
+#page a.ua-button:active {
+  background-image: none !important;
+  line-height: 1.1 !important;
+  text-decoration: none !important;
+  text-decoration-color: transparent !important;
+  text-decoration-line: none !important;
+  text-decoration-thickness: 0 !important;
+  text-shadow: none !important;
+  vertical-align: middle;
+}
+
+a.ua-button *,
+#page a.ua-button * {
+  background-image: none !important;
+  text-decoration: none !important;
+  text-decoration-color: transparent !important;
+  text-decoration-line: none !important;
+}
+
+#page a.ua-button {
+  border-style: solid !important;
+  border-width: 2px !important;
+}
+
+a.ua-button--accent,
+a.ua-button--accent:link,
+a.ua-button--accent:visited,
+a.ua-button--accent:hover,
+a.ua-button--accent:focus,
+#page a.ua-button--accent,
+#page a.ua-button--accent:link,
+#page a.ua-button--accent:visited,
+#page a.ua-button--accent:hover,
+#page a.ua-button--accent:focus,
+a.ua-button--lime,
+a.ua-button--lime:link,
+a.ua-button--lime:visited,
+a.ua-button--lime:hover,
+a.ua-button--lime:focus,
+#page a.ua-button--lime,
+#page a.ua-button--lime:link,
+#page a.ua-button--lime:visited,
+#page a.ua-button--lime:hover,
+#page a.ua-button--lime:focus {
+  background: var(--ua-primary-lime) !important;
+  border-color: var(--ua-primary-lime) !important;
+  color: var(--ua-primary-forest) !important;
+}
+
+a.ua-button--accent:hover,
+a.ua-button--lime:hover,
+#page a.ua-button--accent:hover,
+#page a.ua-button--lime:hover {
+  background: var(--ua-complement-light-green) !important;
+  border-color: var(--ua-complement-light-green) !important;
+  box-shadow: 0 8px 18px rgba(200, 255, 1, 0.24) !important;
+}
+
+a.ua-button--cyan,
+a.ua-button--cyan:link,
+a.ua-button--cyan:visited,
+a.ua-button--cyan:hover,
+a.ua-button--cyan:focus,
+#page a.ua-button--cyan,
+#page a.ua-button--cyan:link,
+#page a.ua-button--cyan:visited,
+#page a.ua-button--cyan:hover,
+#page a.ua-button--cyan:focus {
+  background: var(--ua-complement-cyan) !important;
+  border-color: var(--ua-complement-cyan) !important;
+  color: var(--ua-primary-forest) !important;
+}
+
+a.ua-button--cyan:hover,
+#page a.ua-button--cyan:hover {
+  background: #2BBAC8 !important;
+  border-color: #2BBAC8 !important;
+  box-shadow: 0 8px 18px rgba(0, 164, 181, 0.20) !important;
+}
+
+a.ua-button--outline,
+a.ua-button--outline:link,
+a.ua-button--outline:visited,
+a.ua-button--outline:hover,
+a.ua-button--outline:focus,
+#page a.ua-button--outline,
+#page a.ua-button--outline:link,
+#page a.ua-button--outline:visited,
+#page a.ua-button--outline:hover,
+#page a.ua-button--outline:focus {
+  background: transparent !important;
+  border-color: var(--ua-complement-cyan) !important;
+  color: #007481 !important;
+}
+
+a.ua-button--outline:hover,
+#page a.ua-button--outline:hover {
+  background: rgba(0, 164, 181, 0.08) !important;
+  border-color: var(--ua-complement-cyan) !important;
+  box-shadow: 0 8px 18px rgba(0, 164, 181, 0.14) !important;
+}
+
+:where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline,
+:where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:link,
+:where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:visited,
+:where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:hover,
+:where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:focus,
+#page :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline,
+#page :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:link,
+#page :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:visited,
+#page :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:hover,
+#page :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:focus {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.52) !important;
+  color: var(--ua-white) !important;
+}
+
+:where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:hover,
+#page :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:hover {
+  background: rgba(200, 255, 1, 0.14) !important;
+  border-color: var(--ua-primary-lime) !important;
+  box-shadow: 0 8px 18px rgba(200, 255, 1, 0.16) !important;
 }
 
 .ua-button--pill {
