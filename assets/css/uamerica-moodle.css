@@ -2015,6 +2015,73 @@
   color: var(--ua-white);
 }
 
+.ua-moodle a.ua-button,
+.ua-moodle a.ua-button:link,
+.ua-moodle a.ua-button:visited,
+.ua-moodle a.ua-button:hover,
+.ua-moodle a.ua-button:focus,
+.ua-moodle a.ua-button:active,
+.ua-moodle button.ua-button {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+}
+
+.ua-moodle a.ua-button *,
+.ua-moodle button.ua-button * {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+}
+
+.ua-moodle a.ua-button--accent,
+.ua-moodle a.ua-button--accent:link,
+.ua-moodle a.ua-button--accent:visited,
+.ua-moodle a.ua-button--accent:hover,
+.ua-moodle a.ua-button--accent:focus,
+.ua-moodle a.ua-button--lime,
+.ua-moodle a.ua-button--lime:link,
+.ua-moodle a.ua-button--lime:visited,
+.ua-moodle a.ua-button--lime:hover,
+.ua-moodle a.ua-button--lime:focus,
+.ua-moodle a.ua-button--cyan,
+.ua-moodle a.ua-button--cyan:link,
+.ua-moodle a.ua-button--cyan:visited,
+.ua-moodle a.ua-button--cyan:hover,
+.ua-moodle a.ua-button--cyan:focus {
+  color: var(--ua-primary-forest) !important;
+}
+
+.ua-moodle a.ua-button--outline,
+.ua-moodle a.ua-button--outline:link,
+.ua-moodle a.ua-button--outline:visited,
+.ua-moodle a.ua-button--outline:hover,
+.ua-moodle a.ua-button--outline:focus {
+  color: var(--ua-color-text) !important;
+}
+
+.ua-moodle .ua-button--outline {
+  border-color: var(--ua-color-text);
+}
+
+.ua-moodle .ua-button--outline:hover {
+  border-color: var(--ua-primary-lime);
+}
+
+.ua-moodle :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline,
+.ua-moodle :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:link,
+.ua-moodle :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:visited,
+.ua-moodle :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:hover,
+.ua-moodle :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) a.ua-button--outline:focus {
+  color: var(--ua-white) !important;
+}
+
+.ua-moodle :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) .ua-button--outline {
+  border-color: rgba(255, 255, 255, 0.52);
+}
+
+.ua-moodle :where(.ua-bg-neural, .ua-bg-waves, .ua-bg-mesh, .ua-course-hero--dark, .ua-editorial-hero:not(.ua-editorial-hero--light), .ua-method-section, .ua-audio-lesson__hero, .ua-toast) .ua-button--outline:hover {
+  border-color: var(--ua-primary-lime);
+}
+
 .ua-button--pill {
   border-radius: 999px;
 }
