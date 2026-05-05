@@ -26,8 +26,8 @@
   --ua-color-danger: var(--ua-complement-orange);
   --ua-color-special: var(--ua-complement-purple);
   --ua-color-focus: var(--ua-complement-cyan);
-  --ua-logo-black-url: url("https://data.yedatech.com.co/api/public/1777858705780-Logo-UA-Negro.png");
-  --ua-logo-normal-url: url("https://data.yedatech.com.co/api/public/1777858705294-Logo-UA.png");
+  --ua-logo-black-url: url("https://i.postimg.cc/L8qm1fsg/image.png");
+  --ua-logo-normal-url: url("https://i.postimg.cc/c1tGwQnF/Logo-UA.png");
 
   --ua-font-sans: "DM Sans", "Inter", "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --ua-font-ui: "Inter", "DM Sans", "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -1052,8 +1052,11 @@
 
 .ua-welcome-section__features,
 .ua-audience-grid {
+  align-items: stretch;
   display: grid;
   gap: var(--ua-space-4);
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 

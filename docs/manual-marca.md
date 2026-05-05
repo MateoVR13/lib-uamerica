@@ -4,13 +4,13 @@
 
 | Variante | URL | Uso recomendado |
 | --- | --- | --- |
-| Logo normal | `https://data.yedatech.com.co/api/public/1777858705294-Logo-UA.png` | Fondos oscuros o institucionales. |
-| Logo negro | `https://data.yedatech.com.co/api/public/1777858705780-Logo-UA-Negro.png` | Fondos claros. |
+| Logo normal | `https://i.postimg.cc/c1tGwQnF/Logo-UA.png` | Fondos oscuros o institucionales. |
+| Logo negro | `https://i.postimg.cc/L8qm1fsg/image.png` | Fondos claros. |
 
 En componentes Moodle se pueden usar directamente como imagen:
 
 ```html
-<img class="ua-logo ua-logo--md" src="https://data.yedatech.com.co/api/public/1777858705294-Logo-UA.png" alt="Universidad de America">
+<img class="ua-logo ua-logo--md" src="https://i.postimg.cc/c1tGwQnF/Logo-UA.png" alt="Universidad de America">
 ```
 
 Tambien estan disponibles como variables CSS:

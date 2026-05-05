@@ -10,6 +10,27 @@ Todo bloque para Moodle debe envolverse con `.ua-moodle`.
 </div>
 ```
 
+## Personalizacion avanzada
+
+El catalogo incluye un personalizador visual para generar HTML listo para Moodle. El sistema trabaja con estilos inline y variables CSS locales, por eso cada componente copiado puede modificar color, fondo, borde, padding, radio, sombra, imagen, animacion y hover sin tocar el CSS global.
+
+Reglas de uso:
+
+| Recurso | Uso |
+| --- | --- |
+| `style="--ua-color-accent:#C8FF01"` | Cambia acento institucional del componente y sus hijos. |
+| `style="--ua-color-text:#1A2403"` | Cambia color base de texto dentro del bloque. |
+| `style="background-color:#FFFFFF"` | Cambia fondo plano. |
+| `style="background-image:url('...')"` | Usa imagen externa como fondo del componente o media. |
+| `style="border-color:#00A4B5;border-width:2px"` | Personaliza borde. |
+| `style="padding:2rem;border-radius:8px"` | Ajusta densidad y esquinas. |
+| `style="box-shadow:0 20px 46px rgba(26,36,3,.16)"` | Controla profundidad. |
+| `.ua-bg-dot-grid`, `.ua-bg-lines`, `.ua-bg-neural`, `.ua-bg-waves`, `.ua-bg-mesh` | Fondos graficos reutilizables. |
+| `.ua-pop-in`, `.ua-fade-in`, `.ua-slide-in-up`, `.ua-slide-in-left`, `.ua-slide-in-right` | Animaciones de entrada. |
+| `.ua-hover-lift`, `.ua-hover-outline`, `.ua-hover-outline-pulse`, `.ua-hover-glow`, `.ua-hover-glow-cyan`, `.ua-hover-glow-gold`, `.ua-hover-shake`, `.ua-hover-breathe` | Interacciones hover. |
+
+Para una personalizacion rapida, usa la seccion `Personalizador` de la app, copia el HTML generado y pegalo dentro de Moodle.
+
 ## Layout
 
 | Clase | Uso |
@@ -57,7 +78,7 @@ Regla visual: no usar gradientes claros como fondo. En modo claro se usan superf
 | `.ua-editorial-hero--light`, `.ua-editorial-hero--compact` | Variantes clara y compacta de portada editorial. |
 | `.ua-editorial-pill`, `.ua-editorial-icon` | Microcomponentes para etiquetas, estados e iconos textuales. |
 | `.ua-welcome-section` | Bloque de bienvenida con introduccion centrada, beneficios y cita institucional. |
-| `.ua-feature-card` | Tarjeta de beneficio o atributo del curso. Variantes `--cyan` y `--gold`. |
+| `.ua-feature-card` | Tarjeta de beneficio o atributo del curso. Variantes `--cyan` y `--gold`. Dentro de `.ua-welcome-section__features` mantiene 3 cards por fila en escritorio y crea nuevas filas segun la cantidad. |
 | `.ua-audience-section`, `.ua-profile-card` | Seccion para perfiles de estudiantes/docentes o niveles de entrada. |
 | `.ua-method-section`, `.ua-method-card` | Metodologia visual tipo ruta con pasos conectados. |
 | `.ua-module-intro` | Bloque editorial para introduccion a saber, modulo o unidad con logo y proposito. |
