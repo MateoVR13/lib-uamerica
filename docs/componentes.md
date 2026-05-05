@@ -14,6 +14,8 @@ Todo bloque para Moodle debe envolverse con `.ua-moodle`.
 
 El catalogo incluye un personalizador visual para generar HTML listo para Moodle. El sistema trabaja con estilos inline y variables CSS locales, por eso cada componente copiado puede modificar color, fondo, borde, padding, radio, sombra, imagen, animacion y hover sin tocar el CSS global.
 
+El personalizador separa controles de titulo, etiqueta, descripcion, texto base y componentes internos. Para cards, pasos, metricas, detalles, tabs o chips, usa `Titulos internos/cards`, `Texto interno/cards`, `Detalle 1` y `Detalle 2`.
+
 Reglas de uso:
 
 | Recurso | Uso |
@@ -74,6 +76,7 @@ Regla visual: no usar gradientes claros como fondo. En modo claro se usan superf
 | `.ua-course-hero--lime` | Variante clara con acento lima. |
 | `.ua-course-hero--dark` | Variante oscura con logo normal. |
 | `.ua-course-hero--split` | Variante de portada con mayor presencia visual lateral. |
+| `.ua-no-watermark` | Quita la marca de agua automatica del `.ua-course-hero`, util para fondos neural o imagen. |
 | `.ua-editorial-hero` | Portada editorial premium para formaciones, cursos o rutas. Incluye zona de logo, titulo, pill y metricas. |
 | `.ua-editorial-hero--light`, `.ua-editorial-hero--compact` | Variantes clara y compacta de portada editorial. |
 | `.ua-editorial-pill`, `.ua-editorial-icon` | Microcomponentes para etiquetas, estados e iconos textuales. |

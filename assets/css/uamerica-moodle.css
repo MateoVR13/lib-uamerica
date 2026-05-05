@@ -503,6 +503,10 @@
   opacity: 0.16;
 }
 
+.ua-course-hero.ua-no-watermark::after {
+  display: none;
+}
+
 .ua-course-hero--lime {
   background: var(--ua-white);
   border-top: 8px solid var(--ua-primary-lime);
