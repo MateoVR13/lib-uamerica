@@ -339,7 +339,18 @@
   }
 
   function button(state, variant) {
-    return '<a class="ua-button ' + variant + ' ua-button--auto" href="' + escapeHtml(state.buttonUrl || "#") + '">' + escapeHtml(state.buttonText) + '</a>';
+    var style = [
+      "display:inline-flex",
+      "align-items:center",
+      "justify-content:center",
+      "line-height:1.1",
+      "text-decoration:none !important",
+      "text-decoration-line:none !important",
+      "text-decoration-color:transparent !important",
+      "text-decoration-thickness:0 !important",
+      "background-image:none !important"
+    ].join(";");
+    return '<a class="ua-button ' + variant + ' ua-button--auto" href="' + escapeHtml(state.buttonUrl || "#") + '" style="' + style + '">' + escapeHtml(state.buttonText) + '</a>';
   }
 
   function cards(state, type) {
@@ -494,7 +505,7 @@
         '    <h3 class="ua-content-block__title"' + textStyle(state.titleColor) + '>' + escapeHtml(state.title) + '</h3>',
         '    <p class="ua-content-block__text"' + textStyle(state.bodyColor) + '>' + escapeHtml(state.body) + '</p>',
         '    <aside class="ua-content-block__aside"' + internalStyle(state) + '>' + escapeHtml(state.itemBody) + '</aside>',
-        '    <div class="ua-button-row">' + button(state, "ua-button--accent") + '</div>',
+        '    <div class="ua-button-row" style="margin-top:1.5rem">' + button(state, "ua-button--accent") + '</div>',
         '  </div>',
         '  <div class="ua-content-block__media"' + mediaStyle(state) + '></div>',
         '</section>'
