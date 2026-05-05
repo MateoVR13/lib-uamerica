@@ -14,7 +14,9 @@ Todo bloque para Moodle debe envolverse con `.ua-moodle`.
 
 El catalogo incluye un personalizador visual para generar HTML listo para Moodle. El sistema trabaja con estilos inline y variables CSS locales, por eso cada componente copiado puede modificar color, fondo, borde, padding, radio, sombra, imagen, animacion y hover sin tocar el CSS global.
 
-El personalizador separa controles de titulo, etiqueta, descripcion, texto base y componentes internos. Para cards, pasos, metricas, detalles, tabs o chips, usa `Titulos internos/cards`, `Texto interno/cards`, `Detalle 1` y `Detalle 2`.
+El personalizador separa controles por tipo de componente. Al cambiar el selector principal se muestran solo los campos que ese bloque usa: textos principales, logo, boton, audio, detalles, imagen, colores internos o elementos repetibles.
+
+Para componentes con items repetibles, usa `Cantidad de items`, `Titulos internos/cards` y `Textos internos/cards`. Cada linea de `Titulos internos/cards` corresponde a un item. Cada linea de `Textos internos/cards` corresponde al texto del item en la misma posicion; si escribes una sola linea, se reutiliza en todos. Esto aplica a rutas con cards, metodologia visual, acordeon, tabs, carrusel y chips de la leccion de audio.
 
 Reglas de uso:
 

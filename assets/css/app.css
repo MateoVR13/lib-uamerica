@@ -534,6 +534,11 @@ body {
   min-width: 0;
 }
 
+.catalog-control[hidden],
+.catalog-check[hidden] {
+  display: none !important;
+}
+
 .catalog-control label,
 .catalog-check {
   color: var(--catalog-muted);

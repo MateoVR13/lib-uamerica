@@ -45,6 +45,15 @@
 
   var componentPresets = {
     courseHero: {
+      title: "Unidad personalizada",
+      eyebrow: "Ruta de aprendizaje",
+      body: "Configura este componente con colores, fondos, imagenes, animaciones y espaciado para pegarlo directamente en Moodle.",
+      logoUrl: LOGO_NORMAL,
+      buttonText: "Abrir actividad",
+      detailOneTitle: "Competencia",
+      detailOneBody: "Define el logro central de la unidad.",
+      detailTwoTitle: "Recursos",
+      detailTwoBody: "Videos, lecturas, audio y actividades.",
       backgroundColor: "#1A2403",
       textColor: "#FFFFFF",
       titleColor: "#FFFFFF",
@@ -59,6 +68,14 @@
       minHeight: "22rem"
     },
     editorialHero: {
+      title: "Moodle con HTML, LaTeX e inteligencia",
+      eyebrow: "Formacion docente",
+      body: "De la etiqueta HTML al recurso interactivo: transforma tu aula virtual en un entorno de aprendizaje visual, claro y reutilizable.",
+      titleAccent: "Artificial",
+      logoUrl: LOGO_NORMAL,
+      buttonText: "Abrir actividad",
+      detailOneTitle: "bloques",
+      detailTwoTitle: "editable",
       backgroundColor: "#1A2403",
       textColor: "#FFFFFF",
       titleColor: "#FFFFFF",
@@ -73,6 +90,13 @@
       minHeight: "19rem"
     },
     welcome: {
+      title: "Esta unidad se desarrolla en",
+      eyebrow: "Ruta de aprendizaje",
+      body: "Primero observas un ejemplo, luego entiendes su estructura y finalmente construyes una entrega aplicada.",
+      titleAccent: "cuatro momentos",
+      itemCount: "4",
+      itemTitles: "Explorar\nComprender\nPracticar\nAplicar",
+      itemBody: "Revisa un ejemplo de contenido enriquecido dentro de Moodle.\nIdentifica estructura, jerarquia visual, componentes y estilos.\nConstruye una seccion propia con acompanamiento.\nEntrega una evidencia aplicada y lista para publicar.",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       titleColor: "#1A2403",
@@ -83,10 +107,14 @@
       internalTitleColor: "#1A2403",
       internalTextColor: "#606060",
       backgroundType: "plain",
-      padding: "2rem",
-      itemCount: "3"
+      padding: "2rem"
     },
     method: {
+      title: "Cada saber sigue la misma logica",
+      eyebrow: "Metodologia del curso",
+      itemCount: "3",
+      itemTitles: "Ver\nEntender\nHacer",
+      itemBody: "Demo en video o screencast del resultado final.\nExplicacion con analogias cotidianas y sin jerga tecnica.\nPractica guiada paso a paso con tu propia asignatura.",
       backgroundColor: "#1A2403",
       textColor: "#FFFFFF",
       titleColor: "#FFFFFF",
@@ -97,10 +125,14 @@
       internalTitleColor: "#FFFFFF",
       internalTextColor: "#F1F6E8",
       backgroundType: "neural",
-      padding: "2rem",
-      itemCount: "3"
+      padding: "2rem"
     },
     moduleIntro: {
+      title: "Bienvenidos al Saber 1",
+      eyebrow: "Introduccion al modulo",
+      body: "El diseno de un entorno digital no es solo estetica: es una herramienta pedagogica para reducir la carga cognitiva y guiar la atencion hacia lo importante.",
+      logoUrl: LOGO_BLACK,
+      itemBody: "Proposito del saber: disenar contenidos digitales mas claros, accesibles y pertinentes para el aprendizaje.",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       titleColor: "#1A2403",
@@ -110,36 +142,61 @@
       backgroundType: "plain"
     },
     contentBlock: {
+      title: "Teoria aplicada con apoyo visual",
+      eyebrow: "Contenido tematico",
+      body: "Presenta conceptos, ejemplos y relaciones clave con una imagen de apoyo o recurso visual.",
+      itemBody: "Usa este espacio para una idea clave, pregunta detonante o sintesis corta del bloque.",
+      buttonText: "Abrir actividad",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       borderColor: "#C8FF01",
       backgroundType: "plain"
     },
     audioLesson: {
+      title: "El poder del HTML en el aula",
+      eyebrow: "Preparacion auditiva",
+      body: "Escucha el episodio y reconoce los conceptos que aparecen durante la unidad.",
+      detailOneTitle: "Mientras escuchas, presta atencion a:",
+      itemCount: "4",
+      itemTitles: "Que es realmente el HTML\nLenguaje de marcado\nEstructura visual\nBuenas practicas",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       borderColor: "#00A4B5",
       backgroundType: "plain"
     },
     podcast: {
+      title: "Episodio de apertura",
+      eyebrow: "Podcast interactivo / URL de audio",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       borderColor: "#C8FF01",
       backgroundType: "plain"
     },
     video: {
+      title: "Video de apoyo",
+      eyebrow: "Recurso audiovisual",
+      body: "Inserta aqui un video, iframe o enlace a un recurso multimedia del curso.",
+      buttonText: "Ver video",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       borderColor: "#00A4B5",
       backgroundType: "plain"
     },
     meet: {
+      title: "Sesion sincronica",
+      eyebrow: "Encuentro en vivo",
+      body: "Acompana el encuentro con contexto, horario, objetivo y enlace de acceso.",
+      buttonText: "Unirme",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       borderColor: "#00A4B5",
       backgroundType: "plain"
     },
     banner: {
+      title: "Entrega proxima",
+      eyebrow: "Aviso importante",
+      body: "Recuerda revisar la rubrica antes de enviar la actividad.",
+      buttonText: "Ver rubrica",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       borderColor: "#C8FF01",
@@ -147,6 +204,9 @@
       minHeight: ""
     },
     card: {
+      title: "Lectura guiada",
+      eyebrow: "Recurso",
+      body: "Card base para lecturas, actividades, recursos o recordatorios.",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       borderColor: "#C8FF01",
@@ -154,6 +214,8 @@
       minHeight: "12rem"
     },
     callout: {
+      title: "Retroalimentacion disponible",
+      body: "El docente publico comentarios sobre la actividad.",
       backgroundColor: "#F6F8EF",
       textColor: "#1A2403",
       borderColor: "#00A4B5",
@@ -161,24 +223,43 @@
       minHeight: ""
     },
     accordion: {
+      itemCount: "4",
+      itemTitles: "Concepto central\nEjemplo aplicado\nErrores frecuentes\nEntrega esperada",
+      itemBody: "Explica la idea principal de manera concreta.\nMuestra como se ve aplicada en Moodle.\nAclara decisiones que pueden afectar la legibilidad.\nIndica que debe entregar el estudiante.",
+      internalBgColor: "#FFFFFF",
+      internalTitleColor: "#1A2403",
+      internalTextColor: "#606060",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       borderColor: "#C8FF01",
       backgroundType: "plain"
     },
     tabs: {
+      itemCount: "4",
+      itemTitles: "Antes\nDurante\nDespues\nRecursos",
+      itemBody: "Prepara lecturas, preguntas y criterios de evaluacion.\nDesarrolla la actividad con instrucciones claras.\nCierra con evidencia, reflexion y retroalimentacion.\nIncluye enlaces, archivos y materiales de apoyo.",
+      internalBgColor: "#FFFFFF",
+      internalTitleColor: "#1A2403",
+      internalTextColor: "#606060",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       borderColor: "#00A4B5",
       backgroundType: "plain"
     },
     carousel: {
+      itemCount: "5",
+      itemTitles: "Lectura guiada\nVideo de apoyo\nPodcast\nActividad aplicada\nCierre",
+      itemBody: "Texto breve para orientar la lectura.\nVideo con explicacion o demostracion.\nAudio para preparar la clase o el debate.\nTarea con evidencia concreta.\nSintesis y transferencia del aprendizaje.",
+      internalBgColor: "#FFFFFF",
+      internalTitleColor: "#1A2403",
+      internalTextColor: "#606060",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       borderColor: "#C8FF01",
       backgroundType: "plain"
     },
     metric: {
+      title: "Avance esperado",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       borderColor: "#C8FF01",
@@ -186,12 +267,64 @@
       minHeight: "12rem"
     },
     form: {
+      title: "Comentarios de la actividad",
+      body: "Escribe tu respuesta o retroalimentacion.",
+      buttonText: "Enviar respuesta",
       backgroundColor: "#FFFFFF",
       textColor: "#1A2403",
       borderColor: "#00A4B5",
       backgroundType: "plain",
       minHeight: ""
     }
+  };
+
+  var visualFields = [
+    "component",
+    "backgroundColor",
+    "textColor",
+    "accentColor",
+    "borderColor",
+    "backgroundType",
+    "imageUrl",
+    "padding",
+    "radius",
+    "borderWidth",
+    "minHeight",
+    "shadow",
+    "animation",
+    "hover",
+    "reveal"
+  ];
+
+  var mainTextFields = ["title", "eyebrow", "body", "titleColor", "eyebrowColor", "bodyColor"];
+  var innerFields = ["internalBgColor", "internalTitleColor", "internalTextColor"];
+  var repeatFields = ["itemCount", "itemTitles", "itemBody"];
+  var buttonFields = ["buttonText", "buttonUrl"];
+  var detailFields = ["detailOneTitle", "detailOneBody", "detailTwoTitle", "detailTwoBody"];
+
+  function fields() {
+    return visualFields.concat.apply(visualFields, arguments);
+  }
+
+  var componentFields = {
+    courseHero: fields(mainTextFields, ["logoUrl"], buttonFields, innerFields, detailFields),
+    editorialHero: fields(mainTextFields, ["titleAccent", "logoUrl"], buttonFields, innerFields, ["detailOneTitle", "detailTwoTitle"]),
+    welcome: fields(mainTextFields, ["titleAccent"], repeatFields, innerFields),
+    method: fields(["title", "eyebrow", "titleColor", "eyebrowColor"], repeatFields, innerFields),
+    moduleIntro: fields(mainTextFields, ["logoUrl", "itemBody"], innerFields),
+    contentBlock: fields(mainTextFields, buttonFields, ["itemBody"], innerFields),
+    audioLesson: fields(mainTextFields, ["audioUrl", "detailOneTitle", "itemCount", "itemTitles"]),
+    podcast: fields(["title", "eyebrow", "titleColor", "eyebrowColor"], ["audioUrl"]),
+    video: fields(mainTextFields, buttonFields),
+    meet: fields(mainTextFields, buttonFields),
+    banner: fields(mainTextFields, buttonFields),
+    card: fields(mainTextFields),
+    callout: fields(["title", "body", "titleColor", "bodyColor"]),
+    accordion: fields(repeatFields, innerFields),
+    tabs: fields(repeatFields, innerFields),
+    carousel: fields(repeatFields, innerFields),
+    metric: fields(["title", "titleColor"]),
+    form: fields(["title", "body", "titleColor", "bodyColor"], buttonFields)
   };
 
   function toArray(list) {
@@ -231,6 +364,14 @@
   function lineAt(value, index, fallback) {
     var list = lines(value);
     return list[index] || fallback;
+  }
+
+  function itemBodyAt(state, index, fallback) {
+    var list = lines(state.itemBody);
+    if (list.length > 1) {
+      return list[index] || fallback || list[list.length - 1];
+    }
+    return state.itemBody || fallback || "";
   }
 
   function inlineStyle(styles) {
@@ -353,6 +494,62 @@
     return '<a class="ua-button ' + variant + ' ua-button--auto" href="' + escapeHtml(state.buttonUrl || "#") + '" style="' + style + '">' + escapeHtml(state.buttonText) + '</a>';
   }
 
+  function accordionItems(state) {
+    var count = clampCount(state.itemCount);
+    return Array.from({ length: count }, function (_, index) {
+      var fallbackTitle = index === 0 ? state.title : "Item " + String(index + 1).padStart(2, "0");
+      var fallbackBody = index === 0 ? state.body : "Agrega aqui el contenido del item " + String(index + 1) + ".";
+      var title = lineAt(state.itemTitles, index, fallbackTitle);
+      var body = itemBodyAt(state, index, fallbackBody);
+      var titleColor = state.internalTitleColor || state.titleColor;
+      var bodyColor = state.internalTextColor || state.bodyColor;
+
+      return [
+        '<div class="ua-accordion__item">',
+        '  <button class="ua-accordion__trigger" style="color:' + titleColor + '">' + escapeHtml(title) + '</button>',
+        '  <div class="ua-accordion__panel"><p' + textStyle(bodyColor) + '>' + escapeHtml(body) + '</p></div>',
+        '</div>'
+      ].join("\n");
+    }).join("\n");
+  }
+
+  function tabMarkup(state) {
+    var count = clampCount(state.itemCount);
+    var defaults = ["Antes", "Durante", "Despues", "Recursos", "Entrega", "Cierre"];
+    var tabs = [];
+    var panels = [];
+
+    Array.from({ length: count }, function (_, index) {
+      var title = lineAt(state.itemTitles, index, defaults[index] || "Tab " + String(index + 1));
+      var body = itemBodyAt(state, index, index === 0 ? state.body : "Contenido del tab " + String(index + 1) + ".");
+      tabs.push('<button class="ua-tabs__tab">' + escapeHtml(title) + '</button>');
+      panels.push('<div class="ua-tabs__panel"><p' + textStyle(index === 0 ? state.bodyColor : state.internalTextColor) + '>' + escapeHtml(body) + '</p></div>');
+    });
+
+    return [
+      '<div class="ua-tabs__list">' + tabs.join("") + '</div>',
+      panels.join("\n")
+    ].join("\n");
+  }
+
+  function carouselSlides(state) {
+    var count = clampCount(state.itemCount);
+    var defaults = ["Lectura guiada", "Video de apoyo", "Actividad aplicada", "Podcast", "Foro", "Entrega"];
+    return Array.from({ length: count }, function (_, index) {
+      var title = lineAt(state.itemTitles, index, defaults[index] || "Slide " + String(index + 1));
+      var body = itemBodyAt(state, index, "Contenido del slide " + String(index + 1) + ".");
+      return slide(state, "Recurso " + String(index + 1), title, body);
+    }).join("\n");
+  }
+
+  function chips(state) {
+    var count = clampCount(state.itemCount);
+    return Array.from({ length: count }, function (_, index) {
+      var title = lineAt(state.itemTitles, index, "Punto " + String(index + 1));
+      return '<span class="ua-audio-lesson__chip">' + escapeHtml(title) + '</span>';
+    }).join("");
+  }
+
   function cards(state, type) {
     var count = clampCount(state.itemCount);
     var variants = ["", " ua-feature-card--cyan", " ua-feature-card--gold"];
@@ -361,7 +558,7 @@
     return Array.from({ length: count }, function (_, index) {
       var number = String(index + 1).padStart(2, "0");
       var title = lineAt(state.itemTitles, index, labels[index] || "Momento " + number);
-      var itemBody = state.itemBody || "Personaliza este texto para cards, pasos, detalles o slides internos.";
+      var itemBody = itemBodyAt(state, index, "Personaliza este texto para cards, pasos, detalles o slides internos.");
 
       if (type === "method") {
         var methodVariant = index % 3 === 1 ? " ua-method-card--cyan" : index % 3 === 2 ? " ua-method-card--gold" : "";
@@ -473,7 +670,7 @@
         '    <span class="ua-editorial-pill"' + textStyle(state.eyebrowColor) + '>' + escapeHtml(state.eyebrow) + '</span>',
         '    <h3 class="ua-method-section__title"' + textStyle(state.titleColor) + '>' + escapeHtml(state.title) + '</h3>',
         '  </div>',
-        '  <div class="ua-method-steps" style="grid-template-columns:repeat(' + clampCount(state.itemCount) + ', minmax(0, 1fr))">',
+        '  <div class="ua-method-steps" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))">',
         indent(cards(state, "method"), 4),
         '  </div>',
         '</section>'
@@ -522,7 +719,7 @@
         '    <p class="ua-audio-lesson__copy"' + textStyle(state.bodyColor) + '>' + escapeHtml(state.body) + '</p>',
         podcastMarkup(state),
         '  </div>',
-        '  <div class="ua-audio-lesson__listen"><p class="ua-audio-lesson__label"' + textStyle(state.eyebrowColor) + '>' + escapeHtml(state.detailOneTitle) + '</p><div class="ua-audio-lesson__chips"><span class="ua-audio-lesson__chip">' + escapeHtml(lineAt(state.itemTitles, 0, "Conceptos clave")) + '</span><span class="ua-audio-lesson__chip">' + escapeHtml(lineAt(state.itemTitles, 1, "Aplicacion")) + '</span><span class="ua-audio-lesson__chip">' + escapeHtml(lineAt(state.itemTitles, 2, "Cierre")) + '</span></div></div>',
+        '  <div class="ua-audio-lesson__listen"><p class="ua-audio-lesson__label"' + textStyle(state.eyebrowColor) + '>' + escapeHtml(state.detailOneTitle) + '</p><div class="ua-audio-lesson__chips">' + chips(state) + '</div></div>',
         '</section>'
       ].join("\n");
     },
@@ -582,18 +779,14 @@
     accordion: function (state) {
       return [
         '<div class="' + classes("ua-accordion", state) + '" data-ua-accordion' + rootStyle(state) + dataReveal(state) + '>',
-        '  <div class="ua-accordion__item"><button class="ua-accordion__trigger" style="color:' + state.titleColor + '">' + escapeHtml(state.title) + '</button><div class="ua-accordion__panel"><p' + textStyle(state.bodyColor) + '>' + escapeHtml(state.body) + '</p></div></div>',
-        '  <div class="ua-accordion__item"><button class="ua-accordion__trigger" style="color:' + state.internalTitleColor + '">' + escapeHtml(state.detailOneTitle) + '</button><div class="ua-accordion__panel"><p' + textStyle(state.internalTextColor) + '>' + escapeHtml(state.detailOneBody) + '</p></div></div>',
+        indent(accordionItems(state), 2),
         '</div>'
       ].join("\n");
     },
     tabs: function (state) {
       return [
         '<div class="' + classes("ua-tabs", state) + '" data-ua-tabs' + rootStyle(state) + dataReveal(state) + '>',
-        '  <div class="ua-tabs__list"><button class="ua-tabs__tab">' + escapeHtml(lineAt(state.itemTitles, 0, "Antes")) + '</button><button class="ua-tabs__tab">' + escapeHtml(lineAt(state.itemTitles, 1, "Durante")) + '</button><button class="ua-tabs__tab">' + escapeHtml(lineAt(state.itemTitles, 2, "Despues")) + '</button></div>',
-        '  <div class="ua-tabs__panel"><p' + textStyle(state.bodyColor) + '>' + escapeHtml(state.body) + '</p></div>',
-        '  <div class="ua-tabs__panel"><p' + textStyle(state.internalTextColor) + '>' + escapeHtml(state.detailOneBody) + '</p></div>',
-        '  <div class="ua-tabs__panel"><p' + textStyle(state.internalTextColor) + '>' + escapeHtml(state.detailTwoBody) + '</p></div>',
+        indent(tabMarkup(state), 2),
         '</div>'
       ].join("\n");
     },
@@ -601,9 +794,7 @@
       return [
         '<div class="' + classes("ua-carousel", state) + '" data-ua-carousel data-ua-autoplay="4200"' + rootStyle(state) + dataReveal(state) + '>',
         '  <div class="ua-carousel__viewport"><div class="ua-carousel__track">',
-        slide(state, "Recurso 1", "Lectura guiada"),
-        slide(state, "Recurso 2", "Video de apoyo"),
-        slide(state, "Recurso 3", "Actividad aplicada"),
+        carouselSlides(state),
         '  </div></div>',
         '  <div class="ua-carousel__controls"><button class="ua-icon-button ua-carousel__prev" aria-label="Anterior">&lt;</button><div class="ua-carousel__dots"></div><button class="ua-icon-button ua-carousel__next" aria-label="Siguiente">&gt;</button></div>',
         '</div>'
@@ -653,12 +844,12 @@
     ].join("\n");
   }
 
-  function slide(state, meta, title) {
+  function slide(state, meta, title, body) {
     return [
       '    <article class="ua-carousel__slide ua-section ua-section--compact" style="border-color:' + state.borderColor + ';background:' + state.internalBgColor + ';color:' + state.internalTextColor + '">',
       '      <p class="ua-kicker" style="color:' + state.eyebrowColor + '">' + escapeHtml(meta) + '</p>',
       '      <h4 class="ua-card__title" style="color:' + state.internalTitleColor + '">' + escapeHtml(title) + '</h4>',
-      '      <p style="color:' + state.internalTextColor + '">' + escapeHtml(state.itemBody) + '</p>',
+      '      <p style="color:' + state.internalTextColor + '">' + escapeHtml(body || state.itemBody) + '</p>',
       '    </article>'
     ].join("\n");
   }
@@ -686,28 +877,32 @@
 
   function applyPreset(root, component) {
     var preset = componentPresets[component] || {};
-    [
-      "backgroundColor",
-      "textColor",
-      "titleColor",
-      "eyebrowColor",
-      "bodyColor",
-      "accentColor",
-      "borderColor",
-      "internalBgColor",
-      "internalTitleColor",
-      "internalTextColor",
-      "backgroundType",
-      "padding",
-      "radius",
-      "borderWidth",
-      "minHeight",
-      "shadow"
-    ].forEach(function (key) {
+    Object.keys(defaults).filter(function (key) {
+      return key !== "component";
+    }).forEach(function (key) {
       setField(root, key, defaults[key]);
     });
     Object.keys(preset).forEach(function (key) {
       setField(root, key, preset[key]);
+    });
+  }
+
+  function updateControlVisibility(root, component) {
+    var visible = componentFields[component] || visualFields;
+    var visibleMap = visible.reduce(function (map, key) {
+      map[key] = true;
+      return map;
+    }, {});
+
+    toArray(root.querySelectorAll("[data-custom-field]")).forEach(function (field) {
+      var key = field.getAttribute("data-custom-field");
+      var control = field.closest(".catalog-control, .catalog-check");
+
+      if (!control) {
+        return;
+      }
+
+      control.hidden = !visibleMap[key];
     });
   }
 
@@ -747,6 +942,7 @@
       field.addEventListener("change", function () {
         if (field === componentSelect) {
           applyPreset(root, field.value);
+          updateControlVisibility(root, field.value);
         }
         render(root);
       });
@@ -788,11 +984,13 @@
           setField(root, key, defaults[key]);
         });
         applyPreset(root, defaults.component);
+        updateControlVisibility(root, defaults.component);
         render(root);
       });
     }
 
     applyPreset(root, componentSelect ? componentSelect.value : defaults.component);
+    updateControlVisibility(root, componentSelect ? componentSelect.value : defaults.component);
     render(root);
   }
 
