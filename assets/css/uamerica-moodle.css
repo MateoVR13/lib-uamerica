@@ -3097,7 +3097,7 @@ a.ua-button--outline:hover,
 
 .ua-image-carousel__title {
   color: var(--ua-gallery-ink);
-  font-family: var(--ua-font-title);
+  font-family: var(--ua-font-title) !important;
   font-size: clamp(1.45rem, 3vw, 2.1rem);
   line-height: 1.05;
   margin: var(--ua-space-3) 0 0;
@@ -3105,6 +3105,7 @@ a.ua-button--outline:hover,
 
 .ua-image-carousel__title span {
   color: var(--ua-gallery-info);
+  font-family: inherit !important;
 }
 
 .ua-image-carousel__intro {
@@ -3166,7 +3167,7 @@ a.ua-button--outline:hover,
 
 .ua-image-carousel__caption strong {
   color: var(--ua-gallery-accent);
-  font-family: var(--ua-font-title);
+  font-family: var(--ua-font-family);
   font-size: 1.02rem;
   line-height: 1.1;
 }

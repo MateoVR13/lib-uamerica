@@ -20,6 +20,8 @@ Para componentes con items repetibles, usa `Cantidad de items`, `Titulos interno
 
 Para el `Carrusel de imagenes`, pega en `URLs de imagenes` una URL por linea. `Alt de imagenes`, `Titulos internos/cards` y `Textos internos/cards` tambien trabajan linea por linea, de modo que la diapositiva 1 usa la linea 1 de cada campo, la diapositiva 2 usa la linea 2, y asi sucesivamente.
 
+`Fuente` controla el texto general del bloque y `Fuente titulo` controla encabezados como `Carrusel del contenido` de forma independiente.
+
 Reglas de uso:
 
 | Recurso | Uso |

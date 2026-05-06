@@ -12,6 +12,7 @@
     titleAccent: "personalizable",
     logoUrl: LOGO_NORMAL,
     fontFamily: "var(--ua-font-ui)",
+    titleFontFamily: "var(--ua-font-heading)",
     backgroundColor: "#FFFFFF",
     textColor: "#1A2403",
     titleColor: "#1A2403",
@@ -60,6 +61,7 @@
       detailTwoBody: "Videos, lecturas, audio y actividades.",
       backgroundColor: "#1A2403",
       textColor: "#FFFFFF",
+      titleFontFamily: "var(--ua-font-heading)",
       titleColor: "#FFFFFF",
       eyebrowColor: "#FFFFFF",
       bodyColor: "#FFFFFF",
@@ -311,6 +313,7 @@
   var visualFields = [
     "component",
     "fontFamily",
+    "titleFontFamily",
     "backgroundColor",
     "textColor",
     "accentColor",
@@ -422,6 +425,13 @@
     return inlineStyle({ color: color });
   }
 
+  function titleTextStyle(state) {
+    return inlineStyle({
+      color: state.titleColor,
+      "font-family": (state.titleFontFamily || state.fontFamily) + " !important"
+    });
+  }
+
   function internalStyle(state) {
     return inlineStyle({
       "background-color": state.internalBgColor,
@@ -465,7 +475,7 @@
       "--ua-color-text:" + state.textColor,
       "--ua-color-muted:" + state.bodyColor,
       "--ua-font-family:" + state.fontFamily,
-      "--ua-font-title:" + state.fontFamily,
+      "--ua-font-title:" + (state.titleFontFamily || state.fontFamily),
       "--ua-course-bg:" + state.backgroundColor,
       "--ua-course-ink:" + state.titleColor,
       "--ua-course-muted:" + state.bodyColor,
@@ -890,7 +900,7 @@
         '      <span class="ua-image-carousel__icon">IMG</span>',
         '      <div>',
         '        <span class="ua-editorial-pill ua-image-carousel__eyebrow"' + textStyle(state.eyebrowColor) + '>' + escapeHtml(state.eyebrow) + '</span>',
-        '        <h2 class="ua-image-carousel__title"' + textStyle(state.titleColor) + '>' + escapeHtml(state.title) + ' <span style="color:' + state.borderColor + '">' + escapeHtml(state.titleAccent) + '</span></h2>',
+        '        <h2 class="ua-image-carousel__title"' + titleTextStyle(state) + '>' + escapeHtml(state.title) + ' <span style="color:' + state.borderColor + '">' + escapeHtml(state.titleAccent) + '</span></h2>',
         '      </div>',
         '    </header>',
         '    <div class="ua-image-carousel__intro"><p' + textStyle(state.bodyColor) + '>' + escapeHtml(state.body) + '</p></div>',
