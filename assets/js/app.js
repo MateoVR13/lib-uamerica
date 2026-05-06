@@ -11,6 +11,7 @@
     body: "Configura este componente con colores, fondos, imagenes, animaciones y espaciado para pegarlo directamente en Moodle.",
     titleAccent: "personalizable",
     logoUrl: LOGO_NORMAL,
+    fontFamily: "var(--ua-font-ui)",
     backgroundColor: "#FFFFFF",
     textColor: "#1A2403",
     titleColor: "#1A2403",
@@ -23,6 +24,9 @@
     internalTextColor: "#606060",
     itemTitles: "Explorar\nComprender\nAplicar",
     itemBody: "Personaliza este texto para cards, pasos, detalles o slides internos.",
+    imageUrls: "",
+    imageAlts: "",
+    footerText: "Navega entre las imagenes a tu propio ritmo.",
     detailOneTitle: "Competencia",
     detailOneBody: "Define el logro central de la unidad.",
     detailTwoTitle: "Recursos",
@@ -258,6 +262,32 @@
       borderColor: "#C8FF01",
       backgroundType: "plain"
     },
+    imageCarousel: {
+      title: "Carrusel del contenido",
+      eyebrow: "Galeria interactiva",
+      body: "Explora las siguientes imagenes usando los controles laterales o los botones de navegacion inferiores. Cada diapositiva presenta un elemento visual clave del modulo.",
+      titleAccent: "Contenido",
+      logoUrl: LOGO_NORMAL,
+      imageUrls: "https://campusvirtual.uamerica.edu.co/draftfile.php/319199/user/draft/335724392/1.png\nhttps://campusvirtual.uamerica.edu.co/draftfile.php/319199/user/draft/335724392/2.png\nhttps://campusvirtual.uamerica.edu.co/draftfile.php/319199/user/draft/335724392/3.png\nhttps://campusvirtual.uamerica.edu.co/draftfile.php/319199/user/draft/335724392/4.png\nhttps://campusvirtual.uamerica.edu.co/draftfile.php/319199/user/draft/335724392/5.png",
+      imageAlts: "Diapositiva 1 del carrusel\nDiapositiva 2 del carrusel\nDiapositiva 3 del carrusel\nDiapositiva 4 del carrusel\nDiapositiva 5 del carrusel",
+      itemTitles: "Imagen 01\nImagen 02\nImagen 03\nImagen 04\nImagen 05",
+      itemBody: "Elemento visual clave del modulo.",
+      footerText: "Navega entre las imagenes a tu propio ritmo.",
+      backgroundColor: "#0A1104",
+      textColor: "#FFFFFF",
+      titleColor: "#FFFFFF",
+      eyebrowColor: "#C8FF01",
+      bodyColor: "#DDE7D5",
+      accentColor: "#C8FF01",
+      borderColor: "#00A4B5",
+      internalBgColor: "#121A07",
+      internalTitleColor: "#C8FF01",
+      internalTextColor: "#EAF2D3",
+      backgroundType: "plain",
+      padding: "2rem",
+      radius: "18px",
+      minHeight: ""
+    },
     metric: {
       title: "Avance esperado",
       backgroundColor: "#FFFFFF",
@@ -280,6 +310,7 @@
 
   var visualFields = [
     "component",
+    "fontFamily",
     "backgroundColor",
     "textColor",
     "accentColor",
@@ -301,6 +332,7 @@
   var repeatFields = ["itemCount", "itemTitles", "itemBody"];
   var buttonFields = ["buttonText", "buttonUrl"];
   var detailFields = ["detailOneTitle", "detailOneBody", "detailTwoTitle", "detailTwoBody"];
+  var imageListFields = ["imageUrls", "imageAlts", "footerText"];
 
   function fields() {
     return visualFields.concat.apply(visualFields, arguments);
@@ -323,6 +355,7 @@
     accordion: fields(repeatFields, innerFields),
     tabs: fields(repeatFields, innerFields),
     carousel: fields(repeatFields, innerFields),
+    imageCarousel: fields(mainTextFields, ["titleAccent", "logoUrl"], ["imageUrl"], imageListFields, ["itemTitles", "itemBody"], innerFields),
     metric: fields(["title", "titleColor"]),
     form: fields(["title", "body", "titleColor", "bodyColor"], buttonFields)
   };
@@ -431,6 +464,8 @@
       "--ua-color-accent:" + state.accentColor,
       "--ua-color-text:" + state.textColor,
       "--ua-color-muted:" + state.bodyColor,
+      "--ua-font-family:" + state.fontFamily,
+      "--ua-font-title:" + state.fontFamily,
       "--ua-course-bg:" + state.backgroundColor,
       "--ua-course-ink:" + state.titleColor,
       "--ua-course-muted:" + state.bodyColor,
@@ -548,6 +583,52 @@
       var title = lineAt(state.itemTitles, index, "Punto " + String(index + 1));
       return '<span class="ua-audio-lesson__chip">' + escapeHtml(title) + '</span>';
     }).join("");
+  }
+
+  function galleryRootExtra(state) {
+    return [
+      "--ua-gallery-bg:" + state.backgroundColor,
+      "--ua-gallery-ink:" + state.titleColor,
+      "--ua-gallery-muted:" + state.bodyColor,
+      "--ua-gallery-panel:" + state.internalBgColor,
+      "--ua-gallery-panel-ink:" + state.internalTextColor,
+      "--ua-gallery-accent:" + state.accentColor,
+      "--ua-gallery-info:" + state.borderColor,
+      "--ua-gallery-padding:" + state.padding,
+      "padding:0"
+    ].join(";");
+  }
+
+  function galleryImageUrls(state) {
+    var urls = lines(state.imageUrls);
+    if (!urls.length && state.imageUrl) {
+      urls = [state.imageUrl];
+    }
+    return urls;
+  }
+
+  function gallerySlides(state) {
+    var urls = galleryImageUrls(state);
+    if (!urls.length) {
+      urls = lines(componentPresets.imageCarousel.imageUrls);
+    }
+
+    return urls.map(function (url, index) {
+      var number = String(index + 1).padStart(2, "0");
+      var alt = lineAt(state.imageAlts, index, "Diapositiva " + number + " del carrusel");
+      var title = lineAt(state.itemTitles, index, "Imagen " + number);
+      var body = itemBodyAt(state, index, "Elemento visual clave del modulo.");
+
+      return [
+        '    <figure class="ua-carousel__slide ua-image-carousel__slide">',
+        '      <img class="ua-image-carousel__image" src="' + escapeHtml(escapeUrl(url)) + '" alt="' + escapeHtml(alt) + '" loading="lazy">',
+        '      <figcaption class="ua-image-carousel__caption">',
+        '        <strong>' + escapeHtml(title) + '</strong>',
+        '        <span>' + escapeHtml(body) + '</span>',
+        '      </figcaption>',
+        '    </figure>'
+      ].join("\n");
+    }).join("\n");
   }
 
   function cards(state, type) {
@@ -798,6 +879,39 @@
         '  </div></div>',
         '  <div class="ua-carousel__controls"><button class="ua-icon-button ua-carousel__prev" aria-label="Anterior">&lt;</button><div class="ua-carousel__dots"></div><button class="ua-icon-button ua-carousel__next" aria-label="Siguiente">&gt;</button></div>',
         '</div>'
+      ].join("\n");
+    },
+    imageCarousel: function (state) {
+      return [
+        '<section class="' + classes("ua-image-carousel ua-carousel", state) + '" data-ua-carousel data-ua-wrap="false"' + rootStyle(state, galleryRootExtra(state)) + dataReveal(state) + '>',
+        '  <div class="ua-image-carousel__bar"></div>',
+        '  <div class="ua-image-carousel__inner">',
+        '    <header class="ua-image-carousel__head">',
+        '      <span class="ua-image-carousel__icon">IMG</span>',
+        '      <div>',
+        '        <span class="ua-editorial-pill ua-image-carousel__eyebrow"' + textStyle(state.eyebrowColor) + '>' + escapeHtml(state.eyebrow) + '</span>',
+        '        <h2 class="ua-image-carousel__title"' + textStyle(state.titleColor) + '>' + escapeHtml(state.title) + ' <span style="color:' + state.borderColor + '">' + escapeHtml(state.titleAccent) + '</span></h2>',
+        '      </div>',
+        '    </header>',
+        '    <div class="ua-image-carousel__intro"><p' + textStyle(state.bodyColor) + '>' + escapeHtml(state.body) + '</p></div>',
+        '    <div class="ua-image-carousel__frame">',
+        '      <div class="ua-carousel__viewport">',
+        '        <div class="ua-carousel__track">',
+        gallerySlides(state),
+        '        </div>',
+        '      </div>',
+        '    </div>',
+        '    <footer class="ua-image-carousel__footer">',
+        '      <p class="ua-image-carousel__help"><span>i</span>' + escapeHtml(state.footerText) + '</p>',
+        '      <div class="ua-image-carousel__controls">',
+        '        <button class="ua-image-carousel__nav ua-image-carousel__prev ua-carousel__prev" type="button" aria-label="Imagen anterior">Atras</button>',
+        '        <div class="ua-carousel__dots"></div>',
+        '        <button class="ua-image-carousel__nav ua-image-carousel__next ua-carousel__next" type="button" aria-label="Imagen siguiente">Siguiente</button>',
+        '      </div>',
+        '      <img class="ua-image-carousel__logo" src="' + escapeHtml(state.logoUrl || LOGO_NORMAL) + '" alt="Universidad de America">',
+        '    </footer>',
+        '  </div>',
+        '</section>'
       ].join("\n");
     },
     metric: function (state) {

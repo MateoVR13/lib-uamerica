@@ -153,6 +153,7 @@
       var dots = carousel.querySelector(".ua-carousel__dots");
       var current = 0;
       var timer = null;
+      var wrap = carousel.getAttribute("data-ua-wrap") !== "false";
 
       if (!track || !slides.length) {
         return;
@@ -185,7 +186,11 @@
       var dotButtons = dots ? toArray(dots.querySelectorAll("button")) : [];
 
       function goTo(index) {
-        current = (index + slides.length) % slides.length;
+        if (wrap) {
+          current = (index + slides.length) % slides.length;
+        } else {
+          current = Math.max(0, Math.min(slides.length - 1, index));
+        }
         track.style.transform = "translateX(" + current * -100 + "%)";
 
         slides.forEach(function (slide, slideIndex) {
@@ -195,6 +200,26 @@
         dotButtons.forEach(function (dot, dotIndex) {
           dot.setAttribute("aria-current", String(dotIndex === current));
         });
+
+        updateControls();
+      }
+
+      function updateButtonState(button, disabled) {
+        if (!button) {
+          return;
+        }
+        button.disabled = Boolean(disabled);
+        button.setAttribute("aria-disabled", String(Boolean(disabled)));
+      }
+
+      function updateControls() {
+        if (wrap) {
+          updateButtonState(previous, slides.length < 2);
+          updateButtonState(next, slides.length < 2);
+          return;
+        }
+        updateButtonState(previous, current === 0);
+        updateButtonState(next, current === slides.length - 1);
       }
 
       function start() {
@@ -207,6 +232,10 @@
 
         stop();
         timer = window.setInterval(function () {
+          if (!wrap && current === slides.length - 1) {
+            stop();
+            return;
+          }
           goTo(current + 1);
         }, delay);
       }

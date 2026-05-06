@@ -854,6 +854,51 @@
             <p>Frames, video, objetos multimedia, campos y controles para actividades.</p>
           </div>
 
+          <div class="catalog-preview">
+            <section class="ua-image-carousel ua-carousel" data-ua-carousel data-ua-wrap="false">
+              <div class="ua-image-carousel__bar"></div>
+              <div class="ua-image-carousel__inner">
+                <header class="ua-image-carousel__head">
+                  <span class="ua-image-carousel__icon">IMG</span>
+                  <div>
+                    <span class="ua-editorial-pill ua-image-carousel__eyebrow">Galeria interactiva</span>
+                    <h2 class="ua-image-carousel__title">Carrusel del <span>contenido</span></h2>
+                  </div>
+                </header>
+                <div class="ua-image-carousel__intro">
+                  <p>Componente visual para explorar cualquier cantidad de imagenes con controles propios de la libreria.</p>
+                </div>
+                <div class="ua-image-carousel__frame">
+                  <div class="ua-carousel__viewport">
+                    <div class="ua-carousel__track">
+                      <figure class="ua-carousel__slide ua-image-carousel__slide">
+                        <img class="ua-image-carousel__image" src="https://campusvirtual.uamerica.edu.co/draftfile.php/319199/user/draft/335724392/1.png" alt="Diapositiva 1 del carrusel" loading="lazy">
+                        <figcaption class="ua-image-carousel__caption"><strong>Imagen 01</strong><span>Elemento visual clave del modulo.</span></figcaption>
+                      </figure>
+                      <figure class="ua-carousel__slide ua-image-carousel__slide">
+                        <img class="ua-image-carousel__image" src="https://campusvirtual.uamerica.edu.co/draftfile.php/319199/user/draft/335724392/2.png" alt="Diapositiva 2 del carrusel" loading="lazy">
+                        <figcaption class="ua-image-carousel__caption"><strong>Imagen 02</strong><span>La galeria puede crecer agregando mas URLs.</span></figcaption>
+                      </figure>
+                      <figure class="ua-carousel__slide ua-image-carousel__slide">
+                        <img class="ua-image-carousel__image" src="https://campusvirtual.uamerica.edu.co/draftfile.php/319199/user/draft/335724392/3.png" alt="Diapositiva 3 del carrusel" loading="lazy">
+                        <figcaption class="ua-image-carousel__caption"><strong>Imagen 03</strong><span>Colores, textos, fuentes y logo son personalizables.</span></figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+                <footer class="ua-image-carousel__footer">
+                  <p class="ua-image-carousel__help"><span>i</span>Navega entre las imagenes a tu propio ritmo.</p>
+                  <div class="ua-image-carousel__controls">
+                    <button class="ua-image-carousel__nav ua-image-carousel__prev ua-carousel__prev" type="button" aria-label="Imagen anterior">Atras</button>
+                    <div class="ua-carousel__dots"></div>
+                    <button class="ua-image-carousel__nav ua-image-carousel__next ua-carousel__next" type="button" aria-label="Imagen siguiente">Siguiente</button>
+                  </div>
+                  <img class="ua-image-carousel__logo" src="https://i.postimg.cc/c1tGwQnF/Logo-UA.png" alt="Universidad de America">
+                </footer>
+              </div>
+            </section>
+          </div>
+
           <div class="catalog-panel-grid">
             <div class="catalog-preview">
               <figure class="ua-image-frame ua-bg-mesh">
@@ -1024,6 +1069,7 @@
                   <option value="accordion">Acordeon</option>
                   <option value="tabs">Tabs</option>
                   <option value="carousel">Carrusel</option>
+                  <option value="imageCarousel">Carrusel de imagenes</option>
                   <option value="metric">Indicador</option>
                   <option value="form">Formulario</option>
                 </select>
@@ -1057,6 +1103,20 @@
               </div>
 
               <div class="catalog-control-grid catalog-control-grid--colors">
+                <div class="catalog-control">
+                  <label for="custom-font">Fuente</label>
+                  <select id="custom-font" data-custom-field="fontFamily">
+                    <option value="var(--ua-font-ui)" selected>Inter / UI</option>
+                    <option value="var(--ua-font-sans)">DM Sans</option>
+                    <option value="var(--ua-font-heading)">Montserrat</option>
+                    <option value="var(--ua-font-geometric)">Space Grotesk</option>
+                    <option value="var(--ua-font-rounded)">Nunito</option>
+                    <option value="var(--ua-font-display)">Bebas / Oswald</option>
+                    <option value="var(--ua-font-serif)">Playfair</option>
+                    <option value="var(--ua-font-slab)">Roboto Slab</option>
+                    <option value="var(--ua-font-code)">JetBrains Mono</option>
+                  </select>
+                </div>
                 <div class="catalog-control">
                   <label for="custom-bg">Fondo</label>
                   <input id="custom-bg" data-custom-field="backgroundColor" type="color" value="#FFFFFF">
@@ -1110,6 +1170,22 @@ Aplicar</textarea>
                   <label for="custom-item-body">Textos internos/cards</label>
                   <textarea id="custom-item-body" data-custom-field="itemBody" rows="4">Personaliza este texto para cards, pasos, detalles o slides internos.</textarea>
                 </div>
+              </div>
+
+              <div class="catalog-control-grid">
+                <div class="catalog-control">
+                  <label for="custom-image-urls">URLs de imagenes</label>
+                  <textarea id="custom-image-urls" data-custom-field="imageUrls" rows="5" placeholder="Una URL por linea"></textarea>
+                </div>
+                <div class="catalog-control">
+                  <label for="custom-image-alts">Alt de imagenes</label>
+                  <textarea id="custom-image-alts" data-custom-field="imageAlts" rows="5" placeholder="Un texto alternativo por linea"></textarea>
+                </div>
+              </div>
+
+              <div class="catalog-control">
+                <label for="custom-footer-text">Texto pie / ayuda</label>
+                <input id="custom-footer-text" data-custom-field="footerText" type="text" value="Navega entre las imagenes a tu propio ritmo.">
               </div>
 
               <div class="catalog-control-grid">
@@ -1298,6 +1374,7 @@ Aplicar</textarea>
             <span class="catalog-token">.ua-accordion</span>
             <span class="catalog-token">.ua-tabs</span>
             <span class="catalog-token">.ua-carousel</span>
+            <span class="catalog-token">.ua-image-carousel</span>
             <span class="catalog-token">.ua-modal</span>
             <span class="catalog-token">.ua-image-frame</span>
             <span class="catalog-token">.ua-video</span>

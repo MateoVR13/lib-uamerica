@@ -18,6 +18,8 @@ El personalizador separa controles por tipo de componente. Al cambiar el selecto
 
 Para componentes con items repetibles, usa `Cantidad de items`, `Titulos internos/cards` y `Textos internos/cards`. Cada linea de `Titulos internos/cards` corresponde a un item. Cada linea de `Textos internos/cards` corresponde al texto del item en la misma posicion; si escribes una sola linea, se reutiliza en todos. Esto aplica a rutas con cards, metodologia visual, acordeon, tabs, carrusel y chips de la leccion de audio.
 
+Para el `Carrusel de imagenes`, pega en `URLs de imagenes` una URL por linea. `Alt de imagenes`, `Titulos internos/cards` y `Textos internos/cards` tambien trabajan linea por linea, de modo que la diapositiva 1 usa la linea 1 de cada campo, la diapositiva 2 usa la linea 2, y asi sucesivamente.
+
 Reglas de uso:
 
 | Recurso | Uso |
@@ -128,6 +130,7 @@ Regla visual: no usar gradientes claros como fondo. En modo claro se usan superf
 | `.ua-check`, `.ua-radio`, `.ua-switch` | Controles booleanos. |
 | `.ua-image-frame` | Marco de imagen responsive. |
 | `.ua-image-frame--portrait`, `.ua-image-frame--square`, `.ua-image-frame--wide` | Ratios alternos. |
+| `.ua-image-carousel` | Carrusel premium de imagenes con encabezado, descripcion, captions, logo, dots y controles no circulares. En el personalizador acepta cualquier cantidad de URLs, una por linea. |
 | `.ua-video` | Marco de video 16:9. |
 | `.ua-video--portrait`, `.ua-video--square` | Ratios alternos de video. |
 | `.ua-embed-card` | Card generica para iframe, video o recurso embebido. |
@@ -148,6 +151,7 @@ Regla visual: no usar gradientes claros como fondo. En modo claro se usan superf
 | `data-ua-tabs` | Inicializa tabs accesibles. |
 | `data-ua-carousel` | Inicializa carrusel. |
 | `data-ua-autoplay="4200"` | Autoplay de carrusel en milisegundos. |
+| `data-ua-wrap="false"` | Evita que el carrusel vuelva al inicio/final y desactiva los botones cuando corresponde. |
 | `data-ua-modal-target="#id"` | Abre modal. |
 | `.ua-modal` | Modal controlado por JS. |
 | `data-ua-modal-close` | Cierra modal. |
